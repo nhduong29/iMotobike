@@ -73,11 +73,13 @@ button .ui-icon{
 	margin-bottom: 40px;
 }
 
-.numberPlate h3{
+.numberPlate label{
 	font-size: 60px;
 	font-weight: bold;
 	text-align: center;
 	line-height:100px;
+	display: block;
+	color: #0000ff;
 	margin:0;
 }
 

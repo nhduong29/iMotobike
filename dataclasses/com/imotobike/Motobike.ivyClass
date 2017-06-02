@@ -1,0 +1,12 @@
+Motobike #class
+com.imotobike #namespace
+types String #field
+types PERSISTENT #fieldModifier
+chasicNumber String #field
+chasicNumber PERSISTENT #fieldModifier
+chasicFrameNumber String #field
+chasicFrameNumber PERSISTENT #fieldModifier
+description String #field
+description PERSISTENT #fieldModifier
+numberPlate String #field
+numberPlate PERSISTENT #fieldModifier

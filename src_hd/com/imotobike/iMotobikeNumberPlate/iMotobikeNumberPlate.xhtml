@@ -13,61 +13,27 @@
 
 			<h:form id="form">
 				<p:panelGrid columns="2">
-					<p:fieldset legend="Personal Infomations" toggleable="false">
-						<p:panelGrid columns="2">
-							<p:outputLabel for="fullName">#{ivy.cms.co('/Layouts/fullName')}</p:outputLabel>
-							<p:inputText value="" required="true" id="fullName" requiredMessage="Full Name is required" />
-							
-							<p:outputLabel for="id">#{ivy.cms.co('/Layouts/id')}</p:outputLabel>
-							<p:inputText value="" required="true" id="id" requiredMessage="ID is required" />
-							
-							<p:outputLabel for="birthday">#{ivy.cms.co('/Layouts/birthday')}</p:outputLabel>
-		    	 			<p:calendar id="birthday" value="" navigator="true" required="true" pattern="dd.MM.yyyy">
-		            			<!-- 
-		    	 			   	Use the following tag to convert date, time, datetime types to a string that is displayed and vice versa  
-								-->
-		            			<f:convertDateTime pattern="dd.MM.yyyy" />
-		            		</p:calendar>
-		            		
-		            		<p:outputLabel for="mail">Email</p:outputLabel>
-							<p:inputText id="mail" value=""> </p:inputText>
-							
-							<p:outputLabel for="address" style="vertical-align:top">#{ivy.cms.co('/Layouts/address')}</p:outputLabel>
-    	 					<p:inputTextarea value="" rows="2" id="address" required="true"/>
-						</p:panelGrid>
-					</p:fieldset>
-					<p:fieldset legend="Motobike Infomations" toggleable="false">
-						<p:panelGrid columns="2">
-							<p:outputLabel for="type" >#{ivy.cms.co('/Layouts/type')}</p:outputLabel>
-							<p:selectOneMenu id="type" value="" requiredMessage="Type is required">
-					            <f:selectItem itemLabel="AirBlade 2016" itemValue="1"/>
-					            <f:selectItem itemLabel="AirBlade 2017" itemValue="2"/>
-					        </p:selectOneMenu>
-					        
-					        <p:outputLabel for="chassisNumber">#{ivy.cms.co('/Layouts/chassisNumber')}</p:outputLabel>
-							<p:inputText value="" required="true" id="chassisNumber" requiredMessage="Chassis Number is required" />
-							
-							<p:outputLabel for="chassisFrame">#{ivy.cms.co('/Layouts/chassisFrameNumber')}</p:outputLabel>
-							<p:inputText value="" required="true" id="chassisFrame" requiredMessage="Chassis Frame Number is required" />
-							
-							<p:outputLabel for="description" style="vertical-align:top">#{ivy.cms.co('/Layouts/description')}</p:outputLabel>
-	    	 				<p:inputTextarea value="" rows="4" id="description" required="true"/>
-						</p:panelGrid>
-					</p:fieldset>
+					<ic:com.imotobike.PersonComponent startMethod="start" person="#{data.person}" label="Personal Information">
+					</ic:com.imotobike.PersonComponent>
+					
+					<ic:com.imotobike.MotobikeComponent startMethod="start" motobike="#{data.motobike}" label="Motobike Information" motobikeTypes="#{data.motobikeTypes}">
+					</ic:com.imotobike.MotobikeComponent>
+					
 				</p:panelGrid>
 				<p:panelGrid columns="1">
 					<p:fieldset legend="Request Number Plate" toggleable="false">
 						<div class="numberPlate">
-							<h3>59V2-123.99</h3>
+							<p:outputLabel value="#{data.motobike.numberPlate}"/>
 						</div>
+						<p:panelGrid columns="1" styleClass="groupBtn" >
+							<h:panelGroup >
+								<p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Layouts/generate')}" update="form" icon="fa fa-gear" />
+								<p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Layouts/submit')}" update="form" icon="fa fa-check" />
+							</h:panelGroup>
+						</p:panelGrid>
 					</p:fieldset>
 				</p:panelGrid>
-				<p:panelGrid columns="1" styleClass="groupBtn" >
-					<h:panelGroup >
-						<p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Layouts/generate')}" update="form" icon="fa fa-gear" />
-						<p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Layouts/submit')}" update="form" icon="fa fa-check" />
-					</h:panelGroup>
-				</p:panelGrid>
+				
 			</h:form>
 		</ui:define>
 	</ui:composition>
