@@ -1,0 +1,60 @@
+.ui-datatable{
+	border: none;
+}
+
+.ui-datatable-tablewrapper{
+	margin: 0;
+}
+
+.ui-button {
+	background-color: #0000ff!important;
+}
+
+.ui-button:hover{
+	background-color: #0000b9 !important;
+}
+
+
+.ui-button-icon-only{
+	border-radius: 3px !important;
+	color: white !important;
+}
+
+button .ui-icon{
+	color: white !important;
+}
+
+.ui-datatable table thead tr th, .ui-datatable table tfoot tr td, .ui-datatable table thead tr th{
+	color: #ffffff;
+    background-color: #2206ce;
+    border: solid 1px #2206ce;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    color: #0000ff;
+}
+
+.ui-inputfield,.ui-selectonemenu, .ui-selectcheckboxmenu, .ui-selectonemenu .ui-selectonemenu-trigger, .ui-selectcheckboxmenu .ui-selectcheckboxmenu-trigger{
+    border: solid 0px #c6d6df !important;
+    border-bottom: solid 1px #0000ff !important;;
+    background-color: transparent;
+}
+
+.ui-selectonemenu .ui-inputfield{
+	border: none !important;
+}
+
+.ui-inputfield.ui-state-hover, .ui-inputfield.ui-state-focus{
+	background-color: transparent;
+	color: blue !important;
+	font-weight: bold !important;
+	border-bottom: solid 1px #0000ff;
+}
+
+.ui-panelgrid tbody tr td {
+    border-color: transparent !important;
+}
+
+.header-title{
+	font-size: 33px;
+}
