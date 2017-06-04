@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Jun 02 16:27:42 ICT 2017]
+[>Created: Sun Jun 04 22:32:54 ICT 2017]
 15C67A687011A1E1 3.18 #module
 >Proto >Proto Collection #zClass
 ia0 initData Big #zClass
@@ -20,9 +20,10 @@ ia0 @PushWFArc f4 '' #zField
 ia0 @PushWFArc f2 '' #zField
 >Proto ia0 ia0 initData #zField
 ia0 f0 inParamDecl '<> param;' #txt
-ia0 f0 outParamDecl '<iMotobike.Motobike motobike,List<String> motobikeTypes,iMotobike.Person person> result;
+ia0 f0 outParamDecl '<java.lang.Boolean generated,iMotobike.Motobike motobike,List<java.lang.String> motobikeTypes,iMotobike.Person person> result;
 ' #txt
-ia0 f0 outParamTable 'result.motobike=in.motobike;
+ia0 f0 outParamTable 'result.generated=in.generated;
+result.motobike=in.motobike;
 result.motobikeTypes=in.motobikeTypes;
 result.person=in.person;
 ' #txt
@@ -34,6 +35,8 @@ ia0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>call()</name>
+        <nameStyle>6,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt
@@ -51,6 +54,7 @@ import iMotobike.Motobike;
 
 in.motobike = new Motobike();
 in.motobike.numberPlate = "XXYX-XXX.XX";
+in.generated = false;
 
 in.motobikeTypes.add("AriBlade 2017");
 in.motobikeTypes.add("Wave 2017");

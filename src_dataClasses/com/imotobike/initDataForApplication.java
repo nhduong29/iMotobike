@@ -7,7 +7,7 @@ package com.imotobike;
 public class initDataForApplication extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 4363126599349856774L;
+  private static final long serialVersionUID = -1368833985665017617L;
 
   private iMotobike.Motobike motobike;
 
@@ -67,6 +67,26 @@ public class initDataForApplication extends ch.ivyteam.ivy.scripting.objects.Com
   public void setPerson(iMotobike.Person _person)
   {
     person = _person;
+  }
+
+  private java.lang.Boolean generated;
+
+  /**
+   * Gets the field generated.
+   * @return the value of the field generated; may be null.
+   */
+  public java.lang.Boolean getGenerated()
+  {
+    return generated;
+  }
+
+  /**
+   * Sets the field generated.
+   * @param _generated the new value of the field generated.
+   */
+  public void setGenerated(java.lang.Boolean _generated)
+  {
+    generated = _generated;
   }
 
 }

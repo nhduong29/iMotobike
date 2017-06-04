@@ -6,3 +6,5 @@ motobike iMotobike.Motobike #field
 motobike PERSISTENT #fieldModifier
 motobikeTypes List<String> #field
 motobikeTypes PERSISTENT #fieldModifier
+generated Boolean #field
+generated PERSISTENT #fieldModifier
