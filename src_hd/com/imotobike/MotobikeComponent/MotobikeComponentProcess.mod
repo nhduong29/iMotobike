@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Jun 02 15:51:29 ICT 2017]
+[>Created: Mon Jun 05 22:38:59 ICT 2017]
 15C68009DF0B1DCE 3.18 #module
 >Proto >Proto Collection #zClass
 Ms0 MotobikeComponentProcess Big #zClass
@@ -24,14 +24,14 @@ Ms0 @PushWFArc f5 '' #zField
 >Proto Ms0 Ms0 MotobikeComponentProcess #zField
 Ms0 f0 guid 15C68009E122864A #txt
 Ms0 f0 type com.imotobike.MotobikeComponent.MotobikeComponentData #txt
-Ms0 f0 method start(iMotobike.Motobike) #txt
+Ms0 f0 method start(com.imotobike.Motobike) #txt
 Ms0 f0 disableUIEvents true #txt
 Ms0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<iMotobike.Motobike motobike> param = methodEvent.getInputArguments();
+<com.imotobike.Motobike motobike> param = methodEvent.getInputArguments();
 ' #txt
 Ms0 f0 inParameterMapAction 'out.motobike=param.motobike;
 ' #txt
-Ms0 f0 outParameterDecl '<iMotobike.Motobike motobike> result;
+Ms0 f0 outParameterDecl '<com.imotobike.Motobike motobike> result;
 ' #txt
 Ms0 f0 outParameterMapAction 'result.motobike=in.motobike;
 ' #txt
@@ -39,6 +39,8 @@ Ms0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>start(Motobike)</name>
+        <nameStyle>15,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt

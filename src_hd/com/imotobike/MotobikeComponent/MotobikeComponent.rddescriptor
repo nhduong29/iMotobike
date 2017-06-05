@@ -7,13 +7,13 @@
         <inputParameter>
             <name>motobike</name>
             <description></description>
-            <parameterType>iMotobike.Motobike</parameterType>
+            <parameterType>com.imotobike.Motobike</parameterType>
             <nullPermitted>false</nullPermitted>
         </inputParameter>
         <outputParameter>
             <name>motobike</name>
             <description></description>
-            <parameterType>iMotobike.Motobike</parameterType>
+            <parameterType>com.imotobike.Motobike</parameterType>
             <nullPermitted>false</nullPermitted>
         </outputParameter>
     </startMethod>

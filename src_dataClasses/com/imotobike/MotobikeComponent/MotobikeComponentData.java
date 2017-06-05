@@ -7,15 +7,15 @@ package com.imotobike.MotobikeComponent;
 public class MotobikeComponentData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -679923306275518210L;
+  private static final long serialVersionUID = -3403252723096729346L;
 
-  private iMotobike.Motobike motobike;
+  private com.imotobike.Motobike motobike;
 
   /**
    * Gets the field motobike.
    * @return the value of the field motobike; may be null.
    */
-  public iMotobike.Motobike getMotobike()
+  public com.imotobike.Motobike getMotobike()
   {
     return motobike;
   }
@@ -24,7 +24,7 @@ public class MotobikeComponentData extends ch.ivyteam.ivy.scripting.objects.Comp
    * Sets the field motobike.
    * @param _motobike the new value of the field motobike.
    */
-  public void setMotobike(iMotobike.Motobike _motobike)
+  public void setMotobike(com.imotobike.Motobike _motobike)
   {
     motobike = _motobike;
   }

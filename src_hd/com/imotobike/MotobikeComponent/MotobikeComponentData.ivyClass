@@ -1,4 +1,4 @@
 MotobikeComponentData #class
 com.imotobike.MotobikeComponent #namespace
-motobike iMotobike.Motobike #field
+motobike com.imotobike.Motobike #field
 motobike PERSISTENT #fieldModifier

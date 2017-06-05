@@ -7,15 +7,15 @@ package com.imotobike.iMotobikeNumberPlate;
 public class iMotobikeNumberPlateData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 866046304132609473L;
+  private static final long serialVersionUID = -4507889327210154559L;
 
-  private iMotobike.Person person;
+  private com.imotobike.Person person;
 
   /**
    * Gets the field person.
    * @return the value of the field person; may be null.
    */
-  public iMotobike.Person getPerson()
+  public com.imotobike.Person getPerson()
   {
     return person;
   }
@@ -24,18 +24,18 @@ public class iMotobikeNumberPlateData extends ch.ivyteam.ivy.scripting.objects.C
    * Sets the field person.
    * @param _person the new value of the field person.
    */
-  public void setPerson(iMotobike.Person _person)
+  public void setPerson(com.imotobike.Person _person)
   {
     person = _person;
   }
 
-  private iMotobike.Motobike motobike;
+  private com.imotobike.Motobike motobike;
 
   /**
    * Gets the field motobike.
    * @return the value of the field motobike; may be null.
    */
-  public iMotobike.Motobike getMotobike()
+  public com.imotobike.Motobike getMotobike()
   {
     return motobike;
   }
@@ -44,7 +44,7 @@ public class iMotobikeNumberPlateData extends ch.ivyteam.ivy.scripting.objects.C
    * Sets the field motobike.
    * @param _motobike the new value of the field motobike.
    */
-  public void setMotobike(iMotobike.Motobike _motobike)
+  public void setMotobike(com.imotobike.Motobike _motobike)
   {
     motobike = _motobike;
   }

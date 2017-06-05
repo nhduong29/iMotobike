@@ -7,15 +7,15 @@ package com.imotobike;
 public class initDataForApplication extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -1368833985665017617L;
+  private static final long serialVersionUID = 2950778777572235503L;
 
-  private iMotobike.Motobike motobike;
+  private com.imotobike.Motobike motobike;
 
   /**
    * Gets the field motobike.
    * @return the value of the field motobike; may be null.
    */
-  public iMotobike.Motobike getMotobike()
+  public com.imotobike.Motobike getMotobike()
   {
     return motobike;
   }
@@ -24,7 +24,7 @@ public class initDataForApplication extends ch.ivyteam.ivy.scripting.objects.Com
    * Sets the field motobike.
    * @param _motobike the new value of the field motobike.
    */
-  public void setMotobike(iMotobike.Motobike _motobike)
+  public void setMotobike(com.imotobike.Motobike _motobike)
   {
     motobike = _motobike;
   }
@@ -49,13 +49,13 @@ public class initDataForApplication extends ch.ivyteam.ivy.scripting.objects.Com
     motobikeTypes = _motobikeTypes;
   }
 
-  private iMotobike.Person person;
+  private com.imotobike.Person person;
 
   /**
    * Gets the field person.
    * @return the value of the field person; may be null.
    */
-  public iMotobike.Person getPerson()
+  public com.imotobike.Person getPerson()
   {
     return person;
   }
@@ -64,7 +64,7 @@ public class initDataForApplication extends ch.ivyteam.ivy.scripting.objects.Com
    * Sets the field person.
    * @param _person the new value of the field person.
    */
-  public void setPerson(iMotobike.Person _person)
+  public void setPerson(com.imotobike.Person _person)
   {
     person = _person;
   }

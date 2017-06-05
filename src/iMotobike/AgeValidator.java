@@ -19,7 +19,8 @@ public class AgeValidator implements Validator {
 	public void validate(FacesContext facesContext, UIComponent component, Object value) throws ValidatorException {
 		String date = value.toString();
 		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd hh:mm:ss zzz yyyy");
+		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd hh:mm:ss zzz yyyy");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDate start = LocalDate.parse(date, formatter);
 		LocalDate end = LocalDate.now(); 
 		

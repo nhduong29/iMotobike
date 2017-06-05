@@ -1,8 +1,8 @@
 iMotobikeNumberPlateData #class
 com.imotobike.iMotobikeNumberPlate #namespace
-person iMotobike.Person #field
+person com.imotobike.Person #field
 person PERSISTENT #fieldModifier
-motobike iMotobike.Motobike #field
+motobike com.imotobike.Motobike #field
 motobike PERSISTENT #fieldModifier
 motobikeTypes List<String> #field
 motobikeTypes PERSISTENT #fieldModifier

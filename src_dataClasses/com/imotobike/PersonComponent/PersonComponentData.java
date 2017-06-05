@@ -7,15 +7,15 @@ package com.imotobike.PersonComponent;
 public class PersonComponentData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -1884513160918754475L;
+  private static final long serialVersionUID = -5092972671560082603L;
 
-  private iMotobike.Person person;
+  private com.imotobike.Person person;
 
   /**
    * Gets the field person.
    * @return the value of the field person; may be null.
    */
-  public iMotobike.Person getPerson()
+  public com.imotobike.Person getPerson()
   {
     return person;
   }
@@ -24,7 +24,7 @@ public class PersonComponentData extends ch.ivyteam.ivy.scripting.objects.Compos
    * Sets the field person.
    * @param _person the new value of the field person.
    */
-  public void setPerson(iMotobike.Person _person)
+  public void setPerson(com.imotobike.Person _person)
   {
     person = _person;
   }

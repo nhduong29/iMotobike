@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Sun Jun 04 22:32:54 ICT 2017]
+[>Created: Mon Jun 05 22:14:09 ICT 2017]
 15C67A687011A1E1 3.18 #module
 >Proto >Proto Collection #zClass
 ia0 initData Big #zClass
@@ -20,7 +20,7 @@ ia0 @PushWFArc f4 '' #zField
 ia0 @PushWFArc f2 '' #zField
 >Proto ia0 ia0 initData #zField
 ia0 f0 inParamDecl '<> param;' #txt
-ia0 f0 outParamDecl '<java.lang.Boolean generated,iMotobike.Motobike motobike,List<java.lang.String> motobikeTypes,iMotobike.Person person> result;
+ia0 f0 outParamDecl '<java.lang.Boolean generated,com.imotobike.Motobike motobike,List<java.lang.String> motobikeTypes,com.imotobike.Person person> result;
 ' #txt
 ia0 f0 outParamTable 'result.generated=in.generated;
 result.motobike=in.motobike;
@@ -49,19 +49,14 @@ ia0 f3 actionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
 ia0 f3 actionTable 'out=in;
 ' #txt
-ia0 f3 actionCode 'import iMotobike.Person;
-import iMotobike.Motobike;
-
-in.motobike = new Motobike();
-in.motobike.numberPlate = "XXYX-XXX.XX";
+ia0 f3 actionCode 'in.motobike.numberPlate = "XXYX-XXX.XX";
 in.generated = false;
 
 in.motobikeTypes.add("AriBlade 2017");
 in.motobikeTypes.add("Wave 2017");
 in.motobikeTypes.add("Future 2017");
 in.motobikeTypes.add("Vision 2017");
-
-in.person = new Person();' #txt
+' #txt
 ia0 f3 type com.imotobike.initDataForApplication #txt
 ia0 f3 168 42 112 44 0 -8 #rect
 ia0 f3 @|StepIcon #fIcon

@@ -1,5 +1,12 @@
 package iMotobike;
 
+import ch.ivyteam.ivy.business.data.store.BusinessDataRepository;
+import ch.ivyteam.ivy.environment.Ivy;
+
+import com.imotobike.Dossier;
+import com.imotobike.Motobike;
+import com.imotobike.Person;
+
 public class GenerateNumberPlate {
 	private static String generateLetter(){
 		String letter = "";
@@ -30,5 +37,22 @@ public class GenerateNumberPlate {
 		String degit2 = generateNumber(2);
 		
 		return cityNumber + town + "-" + degit1 + "." + degit2;
+	}
+	
+	public static void createMotobikeDossier(Person person, Motobike moto){
+		Dossier dossier = new Dossier();
+		dossier.setPerson(person);
+		dossier.setMotobike(moto);
+		dossier.setApproved(false);//Just generate then set this flag to false, that mean this number plated do not approved
+		Ivy.log().info(person.getFullName());
+		Ivy.log().info(moto.getNumberPlate());
+		BusinessDataRepository repo = BusinessDataRepository.get();
+		repo.save(dossier);
+	}
+	
+	public static long countDossier() 
+	{
+		BusinessDataRepository repo = BusinessDataRepository.get();
+		return repo.search(Dossier.class).execute().count();
 	}
 }
