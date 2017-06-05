@@ -10,44 +10,31 @@
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">iMotobikeNumberPalate</ui:define>
 		<ui:define name="content">
-			<h3>
-			This is an <a href="http://developer.axonivy.com/doc/latest/DesignerGuideHtml/ivy.userinterface.html#ivy-htmldialogs">Html Dialog</a> 
-			implemented with JSF and <a href="http://primefaces.org/">Primefaces</a> as widget library
-			</h3>
-			
+
 			<h:form id="form">
-				<h:panelGrid columns="2">
-					<p:row>
-				        <p:column style="font-weight: bold;">
-							<p:fieldset legend="Personal Infomations" toggleable="false" styleClass="panel">
-							</p:fieldset>
-						</p:column>
-				        <p:column style="font-weight: bold;">
-							<p:fieldset legend="Motobike Infomations" toggleable="false" styleClass="panel">
-							</p:fieldset>
-						</p:column>
-				    </p:row>
+				<p:panelGrid columns="2">
+					<ic:com.imotobike.PersonComponent startMethod="start" person="#{data.person}" label="Personal Information">
+					</ic:com.imotobike.PersonComponent>
 					
+					<ic:com.imotobike.MotobikeComponent startMethod="start" motobike="#{data.motobike}" label="Motobike Information" motobikeTypes="#{data.motobikeTypes}">
+					</ic:com.imotobike.MotobikeComponent>
 					
-					
-					<br />
-					<p:commandButton actionListener="#{logic.close}" value="Proceed" update="form" icon="ui-icon-check" />
-				</h:panelGrid>
+				</p:panelGrid>
+				<p:panelGrid columns="1">
+					<p:fieldset legend="Request Number Plate" toggleable="false">
+						<div class="numberPlate">
+							<p:outputLabel value="#{data.motobike.numberPlate}"/>
+						</div>
+						<p:panelGrid columns="1" styleClass="groupBtn" >
+							<h:panelGroup >
+								<p:commandButton actionListener="#{logic.generateNumberPlate}" value="#{ivy.cms.co('/Layouts/generate')}" disabled="#{data.generated}" update="form" icon="fa fa-gear" />
+								<p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Layouts/submit')}" update="form" icon="fa fa-check" />
+							</h:panelGroup>
+						</p:panelGrid>
+					</p:fieldset>
+				</p:panelGrid>
+				
 			</h:form>
-			<div class="ui-g">
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-    <div class="ui-g-1">1</div>
-</div>
 		</ui:define>
 	</ui:composition>
 </h:body>

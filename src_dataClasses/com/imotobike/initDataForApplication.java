@@ -1,33 +1,13 @@
-package com.imotobike.iMotobikeNumberPlate;
+package com.imotobike;
 
 /**
  */
 @SuppressWarnings("all")
-@javax.annotation.Generated(comments="This is the java file of the ivy data class iMotobikeNumberPlateData", value={"ch.ivyteam.ivy.scripting.streamInOut.IvyScriptJavaClassBuilder"})
-public class iMotobikeNumberPlateData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
+@javax.annotation.Generated(comments="This is the java file of the ivy data class initDataForApplication", value={"ch.ivyteam.ivy.scripting.streamInOut.IvyScriptJavaClassBuilder"})
+public class initDataForApplication extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 866046304132609473L;
-
-  private iMotobike.Person person;
-
-  /**
-   * Gets the field person.
-   * @return the value of the field person; may be null.
-   */
-  public iMotobike.Person getPerson()
-  {
-    return person;
-  }
-
-  /**
-   * Sets the field person.
-   * @param _person the new value of the field person.
-   */
-  public void setPerson(iMotobike.Person _person)
-  {
-    person = _person;
-  }
+  private static final long serialVersionUID = -1368833985665017617L;
 
   private iMotobike.Motobike motobike;
 
@@ -67,6 +47,26 @@ public class iMotobikeNumberPlateData extends ch.ivyteam.ivy.scripting.objects.C
   public void setMotobikeTypes(ch.ivyteam.ivy.scripting.objects.List<java.lang.String> _motobikeTypes)
   {
     motobikeTypes = _motobikeTypes;
+  }
+
+  private iMotobike.Person person;
+
+  /**
+   * Gets the field person.
+   * @return the value of the field person; may be null.
+   */
+  public iMotobike.Person getPerson()
+  {
+    return person;
+  }
+
+  /**
+   * Sets the field person.
+   * @param _person the new value of the field person.
+   */
+  public void setPerson(iMotobike.Person _person)
+  {
+    person = _person;
   }
 
   private java.lang.Boolean generated;

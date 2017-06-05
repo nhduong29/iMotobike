@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:ic="http://ivyteam.ch/jsf/component"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:pm="http://primefaces.org/mobile">
+      
+  <cc:interface componentType="IvyComponent">
+  	<cc:attribute name="label" />
+  </cc:interface>
+  
+  <cc:implementation>
+    <p:fieldset legend="#{cc.attrs.label}" toggleable="false">
+		<p:panelGrid columns="3">
+			<p:outputLabel for="fullName" value="#{ivy.cms.co('/Layouts/fullName')}" />
+			<p:inputText value="#{data.person.fullName}" id="fullName" required="true" maxlength="100" />
+			<p:message for="fullName" display="text" id="fullNameMessage"/>
+			
+			<p:outputLabel for="id" value="#{ivy.cms.co('/Layouts/id')}" maxlength="12"/>
+			<p:inputText value="#{data.person.identify}" required="true" id="id" requiredMessage="ID is required" />
+			<p:message for="id" display="text"  />
+			
+			<p:outputLabel for="birthday" value="#{ivy.cms.co('/Layouts/birthday')}"/>
+  	 			<p:calendar id="birthday" value="#{data.person.birthday}" navigator="true" required="true" pattern="dd.MM.yyyy">
+          			<!-- 
+  	 			   	Use the following tag to convert date, time, datetime types to a string that is displayed and vice versa  
+				-->
+          			<f:convertDateTime pattern="dd.MM.yyyy" />
+          			<f:validator validatorId = "iMotobike.AgeValidator" />
+          		</p:calendar>
+          		<p:message for="birthday" display="text"  />
+          		
+          		<p:outputLabel for="mail" value="Email"/>
+			<p:inputText id="mail" value="#{data.person.email}"/>
+			<p:message for="mail" display="text"  />
+			
+			<p:outputLabel for="address" value="#{ivy.cms.co('/Layouts/address')}" style="vertical-align:top"/>
+	 					<p:inputTextarea value="#{data.person.address}" rows="2" id="address" required="true" maxlength="255"/>
+	 					<p:message for="address" display="text"  />
+		</p:panelGrid>
+	</p:fieldset>
+  </cc:implementation>
+</html>

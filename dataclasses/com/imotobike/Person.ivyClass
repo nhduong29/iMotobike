@@ -1,0 +1,12 @@
+Person #class
+com.imotobike #namespace
+fullName String #field
+fullName PERSISTENT #fieldModifier
+identify String #field
+identify PERSISTENT #fieldModifier
+birthday Date #field
+birthday PERSISTENT #fieldModifier
+email String #field
+email PERSISTENT #fieldModifier
+address String #field
+address PERSISTENT #fieldModifier

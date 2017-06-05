@@ -1,0 +1,4 @@
+PersonComponentData #class
+com.imotobike.PersonComponent #namespace
+person iMotobike.Person #field
+person PERSISTENT #fieldModifier

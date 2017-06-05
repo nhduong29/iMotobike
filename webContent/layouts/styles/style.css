@@ -6,7 +6,7 @@
 	margin: 0;
 }
 
-.ui-button {
+.ui-button{
 	background-color: #0000ff!important;
 }
 
@@ -57,4 +57,51 @@ button .ui-icon{
 
 .header-title{
 	font-size: 33px;
+}
+
+#form table tbody{
+	vertical-align: top !important;
+}
+
+.numberPlate{
+	width:430px;
+	height:100px;
+	border: 4px solid blue;
+	border-radius:2px;
+	color: blue !important;
+	margin: 0 auto;
+	margin-bottom: 40px;
+}
+
+.numberPlate label{
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
+	line-height:100px;
+	display: block;
+	color: #0000ff;
+	margin:0;
+}
+
+.ui-panelgrid {
+    width: 100%;
+}
+
+.ui-fieldset {
+	border-radius: 2px;
+	border: solid 1px #d2d2ec;
+}
+
+.ui-fieldset-legend {
+	background-color: transparent;
+	border: 1px solid blue;
+	color: blue;
+	font-weight: bold;
+}
+.groupBtn{
+	margin-top:30px;
+	margin-bottom: 40px;
+}
+.groupBtn .ui-panelgrid-cell{
+	text-align: center;
 }
