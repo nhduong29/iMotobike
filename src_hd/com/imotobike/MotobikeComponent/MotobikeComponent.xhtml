@@ -10,6 +10,7 @@
       
   <cc:interface componentType="IvyComponent">
   	<cc:attribute name="label" />
+  	<cc:attribute name="readOnly"/>
   	<cc:attribute name="motobikeTypes" />
   </cc:interface>
   
@@ -18,21 +19,21 @@
     <p:fieldset legend="#{cc.attrs.label}" toggleable="false">
 		<p:panelGrid columns="3">
 			<p:outputLabel for="type" value="#{ivy.cms.co('/Layouts/type')}"/>
-			<p:selectOneMenu id="type" value="#{data.motobike.types}" requiredMessage="Type is required">
+			<p:selectOneMenu id="type" value="#{data.motobike.types}" requiredMessage="Type is required" disabled="#{cc.attrs.readOnly}">
 	            <f:selectItems value="#{cc.attrs.motobikeTypes}" var="type" itemValue="#{type}" itemLabel="#{type}"></f:selectItems>
 	        </p:selectOneMenu>
 	        <p:message for="type" display="text"  />
 	        
 	        <p:outputLabel for="chassisNumber" value="#{ivy.cms.co('/Layouts/chassisNumber')}"/>
-			<p:inputText value="#{data.motobike.chasicNumber}" required="true" id="chassisNumber" requiredMessage="Chassis Number is required" maxlength="17" />
+			<p:inputText value="#{data.motobike.chasicNumber}" required="true" id="chassisNumber" requiredMessage="Chassis Number is required" maxlength="17" disabled="#{cc.attrs.readOnly}"/>
 			<p:message for="chassisNumber" display="text"  />
 			
 			<p:outputLabel for="chassisFrame" value="#{ivy.cms.co('/Layouts/chassisFrameNumber')}"/>
-			<p:inputText value="#{data.motobike.chasicFrameNumber}" required="true" id="chassisFrame" requiredMessage="Chassis Frame Number is required" maxlength="17" />
+			<p:inputText value="#{data.motobike.chasicFrameNumber}" required="true" id="chassisFrame" requiredMessage="Chassis Frame Number is required" maxlength="17" disabled="#{cc.attrs.readOnly}" />
 			<p:message for="chassisFrame" display="text"  />
 			
 			<p:outputLabel for="description" style="vertical-align:top" value="#{ivy.cms.co('/Layouts/description')}"/>
- 	 				<p:inputTextarea value="#{data.motobike.description}" rows="4" id="description"  maxlength="1000"/>
+ 	 				<p:inputTextarea value="#{data.motobike.description}" rows="4" id="description"  maxlength="1000" disabled="#{cc.attrs.readOnly}"/>
 		</p:panelGrid>
 	</p:fieldset>
   </cc:implementation>

@@ -28,7 +28,7 @@
 						<p:panelGrid columns="1" styleClass="groupBtn" >
 							<h:panelGroup >
 								<p:commandButton actionListener="#{logic.generateNumberPlate}" value="#{ivy.cms.co('/Layouts/generate')}" disabled="#{data.generated}" update="form" icon="fa fa-gear" />
-								<p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Layouts/submit')}" update="form" icon="fa fa-check" />
+								<p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Layouts/submit')}" update="form" disabled="#{!data.generated}" icon="fa fa-check" />
 							</h:panelGroup>
 						</p:panelGrid>
 					</p:fieldset>
