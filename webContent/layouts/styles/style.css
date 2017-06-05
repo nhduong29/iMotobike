@@ -105,3 +105,11 @@ button .ui-icon{
 .groupBtn .ui-panelgrid-cell{
 	text-align: center;
 }
+
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+  opacity: 0.6 !important;
+  filter: alpha(opacity=60)!important;
+   border-bottom: solid 1px #ddd !important;
+}
