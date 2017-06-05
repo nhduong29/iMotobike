@@ -1,0 +1,4 @@
+ApproveOrRejectData #class
+com.imotobike.ApproveOrReject #namespace
+account com.imotobike.Account #field
+account PERSISTENT #fieldModifier

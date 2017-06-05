@@ -4,3 +4,5 @@ userName String #field
 userName PERSISTENT #fieldModifier
 passWord String #field
 passWord PERSISTENT #fieldModifier
+isLogined Boolean #field
+isLogined PERSISTENT #fieldModifier
