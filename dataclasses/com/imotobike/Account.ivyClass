@@ -1,4 +1,4 @@
-Data #class
+Account #class
 com.imotobike #namespace
 userName String #field
 userName PERSISTENT #fieldModifier

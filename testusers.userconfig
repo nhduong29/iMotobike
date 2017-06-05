@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<userConfig/>
+<userConfig>
+    <user>
+        <username>admin</username>
+        <password>admin</password>
+        <fullName>Son Tran</fullName>
+        <emailAddress>tnson@axonactive.com</emailAddress>
+        <role>Police</role>
+    </user>
+</userConfig>

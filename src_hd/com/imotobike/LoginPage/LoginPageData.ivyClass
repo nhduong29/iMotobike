@@ -1,0 +1,4 @@
+LoginPageData #class
+com.imotobike.LoginPage #namespace
+account com.imotobike.Account #field
+account PERSISTENT #fieldModifier
