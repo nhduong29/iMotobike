@@ -11,8 +11,6 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-import ch.ivyteam.ivy.environment.Ivy;
-
 
 @FacesValidator("iMotobike.AgeValidator")
 public class AgeValidator implements Validator {
@@ -26,7 +24,6 @@ public class AgeValidator implements Validator {
 		LocalDate end = LocalDate.now(); 
 		
 		long years = ChronoUnit.YEARS.between(start, end);
-		Ivy.log().info(years);
 		
 		if(years < 18){
 			FacesMessage msg = new FacesMessage("Age validation failed","You are not allowed to make a request");

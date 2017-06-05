@@ -1,0 +1,4 @@
+iMotoApproveOrRejectData #class
+com.imotobike.iMotoApproveOrReject #namespace
+initDataForApplication com.imotobike.initDataForApplication #field
+initDataForApplication PERSISTENT #fieldModifier

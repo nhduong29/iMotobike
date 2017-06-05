@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Jun 05 11:39:04 ICT 2017]
+[>Created: Mon Jun 05 13:41:48 ICT 2017]
 15C635E6DC392060 3.18 #module
 >Proto >Proto Collection #zClass
 ie0 iMobike Big #zClass
@@ -27,9 +27,9 @@ ie0 @EndTask f10 '' #zField
 ie0 @PushWFArc f14 '' #zField
 >Proto ie0 ie0 iMobike #zField
 ie0 f0 outLink start.ivp #txt
-ie0 f0 type com.imotobike.Data #txt
+ie0 f0 type com.imotobike.initDataForApplication #txt
 ie0 f0 inParamDecl '<> param;' #txt
-ie0 f0 actionDecl 'com.imotobike.Data out;
+ie0 f0 actionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
 ie0 f0 guid 15C635E6DC5D9381 #txt
 ie0 f0 requestEnabled true #txt
@@ -45,16 +45,16 @@ ie0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ie0 f0 @C|.responsibility Everybody #txt
 ie0 f0 81 49 30 30 -21 17 #rect
 ie0 f0 @|StartRequestIcon #fIcon
-ie0 f1 type com.imotobike.Data #txt
+ie0 f1 type com.imotobike.initDataForApplication #txt
 ie0 f1 857 49 30 30 0 15 #rect
 ie0 f1 @|EndIcon #fIcon
 ie0 f3 targetWindow NEW:card: #txt
 ie0 f3 targetDisplay TOP #txt
 ie0 f3 richDialogId com.imotobike.iMotobikeNumberPlate #txt
 ie0 f3 startMethod start() #txt
-ie0 f3 type com.imotobike.Data #txt
+ie0 f3 type com.imotobike.initDataForApplication #txt
 ie0 f3 requestActionDecl '<> param;' #txt
-ie0 f3 responseActionDecl 'com.imotobike.Data out;
+ie0 f3 responseActionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
 ie0 f3 responseMappingAction 'out=in;
 ' #txt
@@ -78,7 +78,7 @@ ie0 f4 111 64 228 64 #arcP
 ie0 f5 richDialogId com.imotobike.iMotobikeNumberPlate #txt
 ie0 f5 startMethod start() #txt
 ie0 f5 requestActionDecl '<> param;' #txt
-ie0 f5 responseActionDecl 'com.imotobike.Data out;
+ie0 f5 responseActionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
 ie0 f5 responseMappingAction 'out=in;
 ' #txt
@@ -91,7 +91,7 @@ TaskA.PRI=2
 TaskA.ROL=Police
 TaskA.SKIP_TASK_LIST=true
 TaskA.TYPE=0' #txt
-ie0 f5 type com.imotobike.Data #txt
+ie0 f5 type com.imotobike.initDataForApplication #txt
 ie0 f5 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -103,9 +103,9 @@ ie0 f5 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 ie0 f5 224 250 112 44 -37 -8 #rect
 ie0 f5 @|UserTaskIcon #fIcon
-ie0 f8 actionDecl 'com.imotobike.Data out;
+ie0 f8 actionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
-ie0 f8 type com.imotobike.Data #txt
+ie0 f8 type com.imotobike.initDataForApplication #txt
 ie0 f8 signalCode request #txt
 ie0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -118,7 +118,7 @@ ie0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 ie0 f8 81 257 30 30 -74 17 #rect
 ie0 f8 @|SignalStartEventIcon #fIcon
-ie0 f7 actionDecl 'com.imotobike.Data out;
+ie0 f7 actionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
 ie0 f7 actionTable 'out=in;
 ' #txt
@@ -126,9 +126,9 @@ ie0 f7 actionCode 'import com.google.gson.Gson;
 import ch.ivyteam.ivy.process.model.value.SignalCode;
 
 // send signal with json payload
-String jsonSerializedPayload = new Gson().toJson(in.userName);
+String jsonSerializedPayload = new Gson().toJson(in.person.fullName);
 ivy.wf.signals().send(new SignalCode("request"), jsonSerializedPayload);' #txt
-ie0 f7 type com.imotobike.Data #txt
+ie0 f7 type com.imotobike.initDataForApplication #txt
 ie0 f7 584 42 112 44 0 -8 #rect
 ie0 f7 @|StepIcon #fIcon
 ie0 f9 expr out #txt
@@ -136,16 +136,16 @@ ie0 f9 444 64 584 64 #arcP
 ie0 f6 expr out #txt
 ie0 f6 696 64 857 64 #arcP
 ie0 f2 expr out #txt
-ie0 f2 type com.imotobike.Data #txt
+ie0 f2 type com.imotobike.initDataForApplication #txt
 ie0 f2 var in1 #txt
 ie0 f2 111 272 224 272 #arcP
-ie0 f10 type com.imotobike.Data #txt
+ie0 f10 type com.imotobike.initDataForApplication #txt
 ie0 f10 553 257 30 30 0 15 #rect
 ie0 f10 @|EndIcon #fIcon
 ie0 f14 expr data #txt
 ie0 f14 outCond ivp=="TaskA.ivp" #txt
 ie0 f14 336 272 553 272 #arcP
->Proto ie0 .type com.imotobike.Data #txt
+>Proto ie0 .type com.imotobike.initDataForApplication #txt
 >Proto ie0 .processKind NORMAL #txt
 >Proto ie0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

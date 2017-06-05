@@ -12,28 +12,29 @@
 			<div class="user-info">
           		Welcome <p:commandLink>Orell Cappack</p:commandLink> - <p:commandLink>Logout</p:commandLink>
           	</div>
+        </ui:insert>
 		</ui:define>
 		<ui:define name="title">iMotobikeNumberPalate</ui:define>
 		<ui:define name="content">
 
 			<h:form id="form">
 				<p:panelGrid columns="2">
-					<ic:com.imotobike.PersonComponent startMethod="start" person="#{data.person}" label="Personal Information">
+					<ic:com.imotobike.PersonComponent startMethod="start" person="#{data.initDataForApplication.person}" label="Personal Information">
 					</ic:com.imotobike.PersonComponent>
 					
-					<ic:com.imotobike.MotobikeComponent startMethod="start" motobike="#{data.motobike}" label="Motobike Information" motobikeTypes="#{data.motobikeTypes}">
+					<ic:com.imotobike.MotobikeComponent startMethod="start" motobike="#{data.initDataForApplication.motobike}" label="Motobike Information" motobikeTypes="#{data.initDataForApplication.motobikeTypes}">
 					</ic:com.imotobike.MotobikeComponent>
 					
 				</p:panelGrid>
 				<p:panelGrid columns="1">
-					<p:fieldset legend="Request Number Plate" toggleable="false">
+					<p:fieldset legend="Approval for Number Plate" toggleable="false">
 						<div class="numberPlate">
-							<p:outputLabel value="#{data.motobike.numberPlate}"/>
+							<p:outputLabel value="#{data.initDataForApplication.motobike.numberPlate}"/>
 						</div>
 						<p:panelGrid columns="1" styleClass="groupBtn" >
 							<h:panelGroup >
-								<p:commandButton actionListener="#{logic.generateNumberPlate}" value="#{ivy.cms.co('/Layouts/generate')}" disabled="#{data.generated}" update="form" icon="fa fa-gear" />
-								<p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Layouts/submit')}" update="form" disabled="#{!data.generated}" icon="fa fa-check" />
+								<p:commandButton value="#{ivy.cms.co('/Layouts/reject')}" update="form" icon="fa fa-trash-o" />
+								<p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Layouts/approve')}" update="form"  icon="fa fa-check" />
 							</h:panelGroup>
 						</p:panelGrid>
 					</p:fieldset>

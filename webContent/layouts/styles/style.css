@@ -113,3 +113,13 @@ button .ui-icon{
   filter: alpha(opacity=60)!important;
    border-bottom: solid 1px #ddd !important;
 }
+
+.navbar-header {
+    float: none; 
+}
+
+.user-info{
+	text-align: right;
+	padding-right: 15px;
+    padding-left: 15px;
+}
