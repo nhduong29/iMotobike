@@ -11,7 +11,7 @@
 		<ui:define name="userComponent">
 		<ui:insert>
 			<div class="user-info">
-          		Welcome <p:commandLink actionListener="#{logic.logout}">Orell Cappack</p:commandLink> - <p:commandLink actionListener="#{logic.logout}">Logout</p:commandLink>
+          		Welcome <p:commandLink>#{data.username}</p:commandLink> - <p:commandLink actionListener="#{logic.logout}">Logout</p:commandLink>
           	</div>
         </ui:insert>
 		</ui:define>
@@ -20,17 +20,17 @@
 
 			<h:form id="form">
 				<p:panelGrid columns="2">
-					<ic:com.imotobike.PersonComponent startMethod="start" person="#{data.initDataForApplication.person}" label="Personal Information">
+					<ic:com.imotobike.PersonComponent startMethod="start" person="#{data.initDataForApplication.person}" label="Personal Information" readOnly="true">
 					</ic:com.imotobike.PersonComponent>
 					
-					<ic:com.imotobike.MotobikeComponent startMethod="start" motobike="#{data.initDataForApplication.motobike}" label="Motobike Information" motobikeTypes="#{data.initDataForApplication.motobikeTypes}">
+					<ic:com.imotobike.MotobikeComponent startMethod="start" motobike="#{data.initDataForApplication.motobike}" label="Motobike Information" motobikeTypes="#{data.initDataForApplication.motobikeTypes}" readOnly="true">
 					</ic:com.imotobike.MotobikeComponent>
 					
 				</p:panelGrid>
 				<p:panelGrid columns="1">
 					<p:fieldset legend="Approval for Number Plate" toggleable="false">
 						<div class="numberPlate">
-							<p:outputLabel value="#{data.initDataForApplication.motobike.numberPlate}"/>
+							<p:outputLabel styleClass="disable" value="#{data.initDataForApplication.motobike.numberPlate}"/>
 						</div>
 						<p:panelGrid columns="1" styleClass="groupBtn" >
 							<h:panelGroup >

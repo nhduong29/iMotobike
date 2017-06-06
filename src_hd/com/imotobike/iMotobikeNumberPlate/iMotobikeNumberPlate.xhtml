@@ -13,10 +13,10 @@
 
 			<h:form id="form">
 				<p:panelGrid columns="2">
-					<ic:com.imotobike.PersonComponent startMethod="start" person="#{data.person}" label="Personal Information">
+					<ic:com.imotobike.PersonComponent startMethod="start" person="#{data.person}" label="Personal Information" readOnly="#{data.generated}">
 					</ic:com.imotobike.PersonComponent>
 					
-					<ic:com.imotobike.MotobikeComponent startMethod="start" motobike="#{data.motobike}" label="Motobike Information" motobikeTypes="#{data.motobikeTypes}">
+					<ic:com.imotobike.MotobikeComponent startMethod="start" motobike="#{data.motobike}" label="Motobike Information" motobikeTypes="#{data.motobikeTypes}" readOnly="#{data.generated}">
 					</ic:com.imotobike.MotobikeComponent>
 					
 				</p:panelGrid>

@@ -9,6 +9,22 @@
         <name>start</name>
         <description>Default dialog start method.</description>
     </startMethod>
+    <startMethod>
+        <name>start</name>
+        <description></description>
+        <inputParameter>
+            <name>iMotobikeNumberPlate</name>
+            <description></description>
+            <parameterType>com.imotobike.initDataForApplication</parameterType>
+            <nullPermitted>false</nullPermitted>
+        </inputParameter>
+        <outputParameter>
+            <name>iMotobikeNumberPlate</name>
+            <description></description>
+            <parameterType>com.imotobike.initDataForApplication</parameterType>
+            <nullPermitted>false</nullPermitted>
+        </outputParameter>
+    </startMethod>
     <property>
         <name>guid</name>
         <value>15C636315BF7ECED</value>

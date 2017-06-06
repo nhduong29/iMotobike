@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Jun 06 09:01:26 ICT 2017]
+[>Created: Tue Jun 06 14:59:44 ICT 2017]
 15C635E6DC392060 3.18 #module
 >Proto >Proto Collection #zClass
 ie0 iMobike Big #zClass
@@ -51,12 +51,16 @@ ie0 f1 @|EndIcon #fIcon
 ie0 f3 targetWindow NEW:card: #txt
 ie0 f3 targetDisplay TOP #txt
 ie0 f3 richDialogId com.imotobike.iMotobikeNumberPlate #txt
-ie0 f3 startMethod start() #txt
+ie0 f3 startMethod start(com.imotobike.initDataForApplication) #txt
 ie0 f3 type com.imotobike.initDataForApplication #txt
-ie0 f3 requestActionDecl '<> param;' #txt
+ie0 f3 requestActionDecl '<com.imotobike.initDataForApplication iMotobikeNumberPlate> param;' #txt
 ie0 f3 responseActionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
 ie0 f3 responseMappingAction 'out=in;
+out.generated=result.iMotobikeNumberPlate.generated;
+out.motobike=result.iMotobikeNumberPlate.motobike;
+out.motobikeTypes=result.iMotobikeNumberPlate.motobikeTypes;
+out.person=result.iMotobikeNumberPlate.person;
 ' #txt
 ie0 f3 windowConfiguration '* ' #txt
 ie0 f3 isAsynch false #txt
@@ -77,6 +81,8 @@ ie0 f4 expr out #txt
 ie0 f4 111 64 228 64 #arcP
 ie0 f8 actionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
+ie0 f8 actionCode 'import com.imotobike.initDataForApplication;
+out = signal.getSignalData().toType(initDataForApplication.class);' #txt
 ie0 f8 type com.imotobike.initDataForApplication #txt
 ie0 f8 signalCode request #txt
 ie0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -94,12 +100,9 @@ ie0 f7 actionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
 ie0 f7 actionTable 'out=in;
 ' #txt
-ie0 f7 actionCode 'import com.google.gson.Gson;
-import ch.ivyteam.ivy.process.model.value.SignalCode;
+ie0 f7 actionCode 'import ch.ivyteam.ivy.process.model.value.SignalCode;
 
-// send signal with json payload
-String jsonSerializedPayload = new Gson().toJson(in.person.fullName);
-ivy.wf.signals().send(new SignalCode("request"), jsonSerializedPayload);' #txt
+ivy.wf.signals().send(new SignalCode("request"), in);' #txt
 ie0 f7 type com.imotobike.initDataForApplication #txt
 ie0 f7 584 42 112 44 0 -8 #rect
 ie0 f7 @|StepIcon #fIcon
@@ -110,12 +113,21 @@ ie0 f6 696 64 857 64 #arcP
 ie0 f10 type com.imotobike.initDataForApplication #txt
 ie0 f10 553 257 30 30 0 15 #rect
 ie0 f10 @|EndIcon #fIcon
-ie0 f2 richDialogId com.imotobike.ApproveOrReject #txt
-ie0 f2 startMethod start(com.imotobike.Account) #txt
-ie0 f2 requestActionDecl '<com.imotobike.Account account> param;' #txt
+ie0 f2 richDialogId com.imotobike.iMotoApproveOrReject #txt
+ie0 f2 startMethod start(com.imotobike.initDataForApplication) #txt
+ie0 f2 requestActionDecl '<com.imotobike.initDataForApplication initDataForApplication> param;' #txt
+ie0 f2 requestMappingAction 'param.initDataForApplication.generated=in.generated;
+param.initDataForApplication.motobike=in.motobike;
+param.initDataForApplication.motobikeTypes=in.motobikeTypes;
+param.initDataForApplication.person=in.person;
+' #txt
 ie0 f2 responseActionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
 ie0 f2 responseMappingAction 'out=in;
+out.generated=result.initDataForApplication.generated;
+out.motobike=result.initDataForApplication.motobike;
+out.motobikeTypes=result.initDataForApplication.motobikeTypes;
+out.person=result.initDataForApplication.person;
 ' #txt
 ie0 f2 outLinks "TaskA.ivp" #txt
 ie0 f2 taskData 'TaskA.EXPRI=2

@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Jun 06 13:43:22 ICT 2017]
+[>Created: Tue Jun 06 14:21:03 ICT 2017]
 15C636315B13B794 3.18 #module
 >Proto >Proto Collection #zClass
 is0 iMotobikeNumberPlateProcess Big #zClass
@@ -30,6 +30,11 @@ is0 @PushWFArc f10 '' #zField
 is0 @GridStep f13 '' #zField
 is0 @PushWFArc f14 '' #zField
 is0 @PushWFArc f5 '' #zField
+is0 @RichDialogInitStart f15 '' #zField
+is0 @RichDialogProcessEnd f16 '' #zField
+is0 @CallSub f17 '' #zField
+is0 @PushWFArc f18 '' #zField
+is0 @PushWFArc f19 '' #zField
 >Proto is0 is0 iMotobikeNumberPlateProcess #zField
 is0 f0 guid 15C636315CA47A57 #txt
 is0 f0 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
@@ -143,12 +148,73 @@ is0 f13 actionCode 'import iMotobike.GenerateNumberPlate;
 GenerateNumberPlate.createMotobikeDossier(out.person,out.motobike);
 ' #txt
 is0 f13 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
-is0 f13 168 138 112 44 0 -8 #rect
+is0 f13 184 138 112 44 0 -8 #rect
 is0 f13 @|StepIcon #fIcon
 is0 f14 expr out #txt
-is0 f14 109 160 168 160 #arcP
+is0 f14 109 160 184 160 #arcP
 is0 f5 expr out #txt
-is0 f5 280 160 387 160 #arcP
+is0 f5 296 160 387 160 #arcP
+is0 f15 guid 15C7C4585FAC9B02 #txt
+is0 f15 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
+is0 f15 method start(com.imotobike.initDataForApplication) #txt
+is0 f15 disableUIEvents true #txt
+is0 f15 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
+<com.imotobike.initDataForApplication iMotobikeNumberPlate> param = methodEvent.getInputArguments();
+' #txt
+is0 f15 inParameterMapAction 'out.generated=param.iMotobikeNumberPlate.generated;
+out.motobike=param.iMotobikeNumberPlate.motobike;
+out.motobikeTypes=param.iMotobikeNumberPlate.motobikeTypes;
+out.person=param.iMotobikeNumberPlate.person;
+' #txt
+is0 f15 outParameterDecl '<com.imotobike.initDataForApplication iMotobikeNumberPlate> result;
+' #txt
+is0 f15 outParameterMapAction 'result.iMotobikeNumberPlate.generated=in.generated;
+result.iMotobikeNumberPlate.motobike=in.motobike;
+result.iMotobikeNumberPlate.motobikeTypes=in.motobikeTypes;
+result.iMotobikeNumberPlate.person=in.person;
+' #txt
+is0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>start(initDataForApplication)</name>
+        <nameStyle>29,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+is0 f15 83 339 26 26 -76 15 #rect
+is0 f15 @|RichDialogInitStartIcon #fIcon
+is0 f16 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
+is0 f16 542 342 26 26 0 12 #rect
+is0 f16 @|RichDialogProcessEndIcon #fIcon
+is0 f17 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
+is0 f17 processCall 'Functional Processes/initData:call()' #txt
+is0 f17 doCall true #txt
+is0 f17 requestActionDecl '<> param;
+' #txt
+is0 f17 responseActionDecl 'com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData out;
+' #txt
+is0 f17 responseMappingAction 'out=in;
+out.generated=result.generated;
+out.motobike=result.motobike;
+out.motobikeTypes=result.motobikeTypes;
+out.person=result.person;
+' #txt
+is0 f17 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>initData</name>
+        <nameStyle>8,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+is0 f17 347 333 112 44 -21 -8 #rect
+is0 f17 @|CallSubIcon #fIcon
+is0 f18 expr out #txt
+is0 f18 459 355 542 355 #arcP
+is0 f19 expr out #txt
+is0 f19 108 352 347 355 #arcP
 >Proto is0 .type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
 >Proto is0 .processKind HTML_DIALOG #txt
 >Proto is0 -8 -8 16 16 16 26 #rect
@@ -165,3 +231,7 @@ is0 f3 mainOut f14 tail #connect
 is0 f14 head f13 mainIn #connect
 is0 f13 mainOut f5 tail #connect
 is0 f5 head f4 mainIn #connect
+is0 f17 mainOut f18 tail #connect
+is0 f18 head f16 mainIn #connect
+is0 f15 mainOut f19 tail #connect
+is0 f19 head f17 mainIn #connect

@@ -7,7 +7,7 @@ package com.imotobike.iMotoApproveOrReject;
 public class iMotoApproveOrRejectData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 4779990965582528577L;
+  private static final long serialVersionUID = 73441990802610883L;
 
   private com.imotobike.initDataForApplication initDataForApplication;
 
@@ -27,6 +27,26 @@ public class iMotoApproveOrRejectData extends ch.ivyteam.ivy.scripting.objects.C
   public void setInitDataForApplication(com.imotobike.initDataForApplication _initDataForApplication)
   {
     initDataForApplication = _initDataForApplication;
+  }
+
+  private java.lang.String username;
+
+  /**
+   * Gets the field username.
+   * @return the value of the field username; may be null.
+   */
+  public java.lang.String getUsername()
+  {
+    return username;
+  }
+
+  /**
+   * Sets the field username.
+   * @param _username the new value of the field username.
+   */
+  public void setUsername(java.lang.String _username)
+  {
+    username = _username;
   }
 
 }
