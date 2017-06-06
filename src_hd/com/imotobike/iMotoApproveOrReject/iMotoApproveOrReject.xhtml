@@ -34,8 +34,8 @@
 						</div>
 						<p:panelGrid columns="1" styleClass="groupBtn" >
 							<h:panelGroup >
-								<p:commandButton value="#{ivy.cms.co('/Layouts/reject')}" update="form" icon="fa fa-trash-o" />
-								<p:commandButton actionListener="#{logic.close}" value="#{ivy.cms.co('/Layouts/approve')}" update="form"  icon="fa fa-check" />
+								<p:commandButton actionListener="#{logic.reject}" value="#{ivy.cms.co('/Layouts/reject')}" update="form" icon="fa fa-trash-o" />
+								<p:commandButton actionListener="#{logic.approve}" value="#{ivy.cms.co('/Layouts/approve')}" update="form"  icon="fa fa-check" />
 							</h:panelGroup>
 						</p:panelGrid>
 					</p:fieldset>

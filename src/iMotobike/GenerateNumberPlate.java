@@ -1,6 +1,5 @@
 package iMotobike;
 
-import java.util.List;
 import java.util.UUID;
 
 import com.imotobike.Dossier;
@@ -8,6 +7,7 @@ import com.imotobike.Motobike;
 import com.imotobike.Person;
 
 import ch.ivyteam.ivy.business.data.store.BusinessDataRepository;
+import ch.ivyteam.ivy.environment.Ivy;
 
 public class GenerateNumberPlate {
 	private static String generateLetter(){
@@ -41,16 +41,19 @@ public class GenerateNumberPlate {
 		return cityNumber + town + "-" + degit1 + "." + degit2;
 	}
 	
+	private static Dossier findDossier(BusinessDataRepository repo, String numberPlate){
+			return repo.search(Dossier.class)
+			.allFields().containsAnyWords(numberPlate)
+		    .execute().getFirst();
+	}
+	
 	private static boolean checkNumberPlateExist(BusinessDataRepository repo, String numberPlate){
-		List<Dossier> result = repo.search(Dossier.class)
-				.allFields().containsAnyWords(numberPlate)
-			    .execute()
-			    .getAll();
-		if(result.size() > 0){
+		if(findDossier(repo, numberPlate) != null){
 			return true;
-		}else{
-			return false;
-		}
+		} 
+		return false;
+		
+		
 	}
 	
 	public static void createMotobikeDossier(Person person, Motobike moto){
@@ -75,6 +78,19 @@ public class GenerateNumberPlate {
 		moto.setNumberPlate(numberPlate);
 		
 		return numberPlate;
+	}
+	
+	public static void approveRequest(String numberPlate){
+		BusinessDataRepository repo = BusinessDataRepository.get();
+		Dossier dos = findDossier(repo, numberPlate);
+		dos.setApproved(true);
+		Ivy.repo().save(dos);
+	}
+	
+	public static void rejectRequest(String numberPlate){
+		BusinessDataRepository repo = BusinessDataRepository.get();
+		Dossier dos = findDossier(repo, numberPlate);
+		Ivy.repo().delete(dos);
 	}
 	
 }
