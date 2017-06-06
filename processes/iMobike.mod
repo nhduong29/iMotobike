@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Jun 06 14:59:44 ICT 2017]
+[>Created: Tue Jun 06 17:33:23 ICT 2017]
 15C635E6DC392060 3.18 #module
 >Proto >Proto Collection #zClass
 ie0 iMobike Big #zClass
@@ -75,10 +75,10 @@ ie0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ie0 f3 228 40 216 48 -97 -8 #rect
+ie0 f3 244 40 216 48 -97 -8 #rect
 ie0 f3 @|RichDialogIcon #fIcon
 ie0 f4 expr out #txt
-ie0 f4 111 64 228 64 #arcP
+ie0 f4 111 64 244 64 #arcP
 ie0 f8 actionDecl 'com.imotobike.initDataForApplication out;
 ' #txt
 ie0 f8 actionCode 'import com.imotobike.initDataForApplication;
@@ -104,12 +104,12 @@ ie0 f7 actionCode 'import ch.ivyteam.ivy.process.model.value.SignalCode;
 
 ivy.wf.signals().send(new SignalCode("request"), in);' #txt
 ie0 f7 type com.imotobike.initDataForApplication #txt
-ie0 f7 584 42 112 44 0 -8 #rect
+ie0 f7 640 42 112 44 0 -8 #rect
 ie0 f7 @|StepIcon #fIcon
 ie0 f9 expr out #txt
-ie0 f9 444 64 584 64 #arcP
+ie0 f9 460 64 640 64 #arcP
 ie0 f6 expr out #txt
-ie0 f6 696 64 857 64 #arcP
+ie0 f6 752 64 857 64 #arcP
 ie0 f10 type com.imotobike.initDataForApplication #txt
 ie0 f10 553 257 30 30 0 15 #rect
 ie0 f10 @|EndIcon #fIcon

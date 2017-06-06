@@ -1,0 +1,4 @@
+ApprovalListData #class
+com.imotobike.ApprovalList #namespace
+approvalList List<com.imotobike.Dossier> #field
+approvalList PERSISTENT #fieldModifier

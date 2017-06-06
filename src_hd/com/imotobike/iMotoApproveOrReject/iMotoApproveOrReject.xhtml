@@ -11,7 +11,7 @@
 		<ui:define name="userComponent">
 		<ui:insert>
 			<div class="user-info">
-          		Welcome <p:commandLink>#{data.username}</p:commandLink> - <p:commandLink actionListener="#{logic.logout}">Logout</p:commandLink>
+          		Welcome <p:commandLink actionListener="#{logic.approvalList}">#{data.username}</p:commandLink> - <p:commandLink actionListener="#{logic.logout}">Logout</p:commandLink>
           	</div>
         </ui:insert>
 		</ui:define>

@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Jun 06 16:07:29 ICT 2017]
+[>Created: Tue Jun 06 17:33:48 ICT 2017]
 15C7710818F8B77D 3.18 #module
 >Proto >Proto Collection #zClass
 is0 iMotoApproveOrRejectProcess Big #zClass
@@ -35,6 +35,11 @@ is0 @GridStep f18 '' #zField
 is0 @RichDialogProcessStart f15 '' #zField
 is0 @PushWFArc f17 '' #zField
 is0 @PushWFArc f19 '' #zField
+is0 @RichDialogProcessStart f20 '' #zField
+is0 @RichDialogEnd f21 '' #zField
+is0 @RichDialog f25 '' #zField
+is0 @PushWFArc f22 '' #zField
+is0 @PushWFArc f23 '' #zField
 >Proto is0 is0 iMotoApproveOrRejectProcess #zField
 is0 f0 guid 15C771081BAE7FEC #txt
 is0 f0 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
@@ -62,7 +67,7 @@ is0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 is0 f0 83 51 26 26 -76 15 #rect
 is0 f0 @|RichDialogInitStartIcon #fIcon
 is0 f1 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
-is0 f1 339 51 26 26 0 12 #rect
+is0 f1 451 51 26 26 0 12 #rect
 is0 f1 @|RichDialogProcessEndIcon #fIcon
 is0 f3 guid 15C771081D857A23 #txt
 is0 f3 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
@@ -133,12 +138,12 @@ is0 f11 actionTable 'out=in;
 ' #txt
 is0 f11 actionCode 'in.username = ivy.session.getSessionUserName();' #txt
 is0 f11 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
-is0 f11 168 42 112 44 0 -8 #rect
+is0 f11 208 42 112 44 0 -8 #rect
 is0 f11 @|StepIcon #fIcon
 is0 f12 expr out #txt
-is0 f12 109 64 168 64 #arcP
+is0 f12 109 64 208 64 #arcP
 is0 f2 expr out #txt
-is0 f2 280 64 339 64 #arcP
+is0 f2 320 64 451 64 #arcP
 is0 f13 actionDecl 'com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData out;
 ' #txt
 is0 f13 actionTable 'out=in;
@@ -155,12 +160,12 @@ is0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-is0 f13 208 138 112 44 -47 -8 #rect
+is0 f13 168 138 112 44 -47 -8 #rect
 is0 f13 @|StepIcon #fIcon
 is0 f14 expr out #txt
-is0 f14 109 160 208 160 #arcP
+is0 f14 109 160 168 160 #arcP
 is0 f5 expr out #txt
-is0 f5 320 160 411 160 #arcP
+is0 f5 280 160 411 160 #arcP
 is0 f16 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
 is0 f16 guid 15C7CA7421DCAE90 #txt
 is0 f16 339 339 26 26 0 12 #rect
@@ -204,6 +209,47 @@ is0 f17 expr out #txt
 is0 f17 109 352 168 352 #arcP
 is0 f19 expr out #txt
 is0 f19 280 352 339 352 #arcP
+is0 f20 guid 15C7CB4F187198EA #txt
+is0 f20 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
+is0 f20 actionDecl 'com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData out;
+' #txt
+is0 f20 actionTable 'out=in;
+' #txt
+is0 f20 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>approvalList</name>
+        <nameStyle>12,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+is0 f20 83 435 26 26 -33 15 #rect
+is0 f20 @|RichDialogProcessStartIcon #fIcon
+is0 f21 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
+is0 f21 guid 15C7CB529D0DADAC #txt
+is0 f21 443 435 26 26 0 12 #rect
+is0 f21 @|RichDialogEndIcon #fIcon
+is0 f25 targetWindow NEW:card: #txt
+is0 f25 targetDisplay TOP #txt
+is0 f25 richDialogId com.imotobike.ApprovalList #txt
+is0 f25 startMethod start(List<com.imotobike.Dossier>) #txt
+is0 f25 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
+is0 f25 requestActionDecl '<List<com.imotobike.Dossier> approvalList> param;' #txt
+is0 f25 responseActionDecl 'com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData out;
+' #txt
+is0 f25 responseMappingAction 'out=in;
+' #txt
+is0 f25 windowConfiguration '* ' #txt
+is0 f25 isAsynch false #txt
+is0 f25 isInnerRd true #txt
+is0 f25 userContext '* ' #txt
+is0 f25 224 426 112 44 0 -8 #rect
+is0 f25 @|RichDialogIcon #fIcon
+is0 f22 expr out #txt
+is0 f22 336 448 443 448 #arcP
+is0 f23 expr out #txt
+is0 f23 109 448 224 448 #arcP
 >Proto is0 .type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
 >Proto is0 .processKind HTML_DIALOG #txt
 >Proto is0 -8 -8 16 16 16 26 #rect
@@ -224,3 +270,7 @@ is0 f15 mainOut f17 tail #connect
 is0 f17 head f18 mainIn #connect
 is0 f18 mainOut f19 tail #connect
 is0 f19 head f16 mainIn #connect
+is0 f25 mainOut f22 tail #connect
+is0 f22 head f21 mainIn #connect
+is0 f20 mainOut f23 tail #connect
+is0 f23 head f25 mainIn #connect

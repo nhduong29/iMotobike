@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Jun 06 14:21:03 ICT 2017]
+[>Created: Tue Jun 06 17:51:27 ICT 2017]
 15C636315B13B794 3.18 #module
 >Proto >Proto Collection #zClass
 is0 iMotobikeNumberPlateProcess Big #zClass
@@ -131,8 +131,12 @@ is0 f11 actionTable 'out=in;
 ' #txt
 is0 f11 actionCode 'import com.imotobike.Dossier;
 import iMotobike.GenerateNumberPlate;
+//GenerateNumberPlate.createSampleData();
 out.motobike.numberPlate = GenerateNumberPlate.createNumberPlate(out.person,out.motobike);
-out.generated = true;' #txt
+out.generated = true;
+
+
+' #txt
 is0 f11 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
 is0 f11 184 218 112 44 0 -8 #rect
 is0 f11 @|StepIcon #fIcon
@@ -185,7 +189,7 @@ is0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 is0 f15 83 339 26 26 -76 15 #rect
 is0 f15 @|RichDialogInitStartIcon #fIcon
 is0 f16 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
-is0 f16 542 342 26 26 0 12 #rect
+is0 f16 542 334 26 26 0 12 #rect
 is0 f16 @|RichDialogProcessEndIcon #fIcon
 is0 f17 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
 is0 f17 processCall 'Functional Processes/initData:call()' #txt
@@ -209,12 +213,12 @@ is0 f17 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-is0 f17 347 333 112 44 -21 -8 #rect
+is0 f17 275 325 112 44 -21 -8 #rect
 is0 f17 @|CallSubIcon #fIcon
 is0 f18 expr out #txt
-is0 f18 459 355 542 355 #arcP
+is0 f18 387 347 542 347 #arcP
 is0 f19 expr out #txt
-is0 f19 108 352 347 355 #arcP
+is0 f19 108 351 275 347 #arcP
 >Proto is0 .type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
 >Proto is0 .processKind HTML_DIALOG #txt
 >Proto is0 -8 -8 16 16 16 26 #rect
