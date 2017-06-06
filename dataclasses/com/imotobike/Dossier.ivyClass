@@ -6,3 +6,5 @@ motobike com.imotobike.Motobike #field
 motobike PERSISTENT #fieldModifier
 approved Boolean #field
 approved PERSISTENT #fieldModifier
+id java.util.UUID #field
+id PERSISTENT #fieldModifier

@@ -1,11 +1,13 @@
 package iMotobike;
 
-import ch.ivyteam.ivy.business.data.store.BusinessDataRepository;
-import ch.ivyteam.ivy.environment.Ivy;
+import java.util.List;
+import java.util.UUID;
 
 import com.imotobike.Dossier;
 import com.imotobike.Motobike;
 import com.imotobike.Person;
+
+import ch.ivyteam.ivy.business.data.store.BusinessDataRepository;
 
 public class GenerateNumberPlate {
 	private static String generateLetter(){
@@ -29,7 +31,7 @@ public class GenerateNumberPlate {
         return digits;
 	}
 	
-	public static String generateMotorbikeNumber(){
+	private static String generateMotorbikeNumber(){
 		String letter = generateLetter();
 		String cityNumber = generateNumber(2);
 		String town = letter + generateNumber(1);
@@ -39,20 +41,40 @@ public class GenerateNumberPlate {
 		return cityNumber + town + "-" + degit1 + "." + degit2;
 	}
 	
+	private static boolean checkNumberPlateExist(BusinessDataRepository repo, String numberPlate){
+		List<Dossier> result = repo.search(Dossier.class)
+				.allFields().containsAnyWords(numberPlate)
+			    .execute()
+			    .getAll();
+		if(result.size() > 0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	public static void createMotobikeDossier(Person person, Motobike moto){
+		BusinessDataRepository repo = BusinessDataRepository.get();
 		Dossier dossier = new Dossier();
+		UUID id = UUID.randomUUID();
+		dossier.setId(id);
 		dossier.setPerson(person);
 		dossier.setMotobike(moto);
 		dossier.setApproved(false);//Just generate then set this flag to false, that mean this number plated do not approved
-		Ivy.log().info(person.getFullName());
-		Ivy.log().info(moto.getNumberPlate());
-		BusinessDataRepository repo = BusinessDataRepository.get();
 		repo.save(dossier);
 	}
 	
-	public static long countDossier() 
-	{
+	public static String createNumberPlate(Person person, Motobike moto){
 		BusinessDataRepository repo = BusinessDataRepository.get();
-		return repo.search(Dossier.class).execute().count();
+		String numberPlate = generateMotorbikeNumber();
+		boolean exitNumber = checkNumberPlateExist(repo,numberPlate);
+		while (exitNumber){
+			numberPlate = generateMotorbikeNumber();
+			exitNumber = checkNumberPlateExist(repo,numberPlate);
+		}
+		moto.setNumberPlate(numberPlate);
+		
+		return numberPlate;
 	}
+	
 }

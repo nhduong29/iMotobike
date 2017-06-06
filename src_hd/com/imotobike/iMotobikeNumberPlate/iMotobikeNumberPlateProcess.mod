@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Jun 05 23:15:49 ICT 2017]
+[>Created: Tue Jun 06 13:43:22 ICT 2017]
 15C636315B13B794 3.18 #module
 >Proto >Proto Collection #zClass
 is0 iMotobikeNumberPlateProcess Big #zClass
@@ -19,7 +19,6 @@ is0 @RichDialogInitStart f0 '' #zField
 is0 @RichDialogProcessEnd f1 '' #zField
 is0 @RichDialogProcessStart f3 '' #zField
 is0 @RichDialogEnd f4 '' #zField
-is0 @PushWFArc f5 '' #zField
 is0 @CallSub f6 '' #zField
 is0 @PushWFArc f7 '' #zField
 is0 @PushWFArc f2 '' #zField
@@ -28,6 +27,9 @@ is0 @RichDialogProcessEnd f9 '' #zField
 is0 @GridStep f11 '' #zField
 is0 @PushWFArc f12 '' #zField
 is0 @PushWFArc f10 '' #zField
+is0 @GridStep f13 '' #zField
+is0 @PushWFArc f14 '' #zField
+is0 @PushWFArc f5 '' #zField
 >Proto is0 is0 iMotobikeNumberPlateProcess #zField
 is0 f0 guid 15C636315CA47A57 #txt
 is0 f0 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
@@ -67,10 +69,8 @@ is0 f3 83 147 26 26 -15 12 #rect
 is0 f3 @|RichDialogProcessStartIcon #fIcon
 is0 f4 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
 is0 f4 guid 15C636315D43ED16 #txt
-is0 f4 211 147 26 26 0 12 #rect
+is0 f4 387 147 26 26 0 12 #rect
 is0 f4 @|RichDialogEndIcon #fIcon
-is0 f5 expr out #txt
-is0 f5 109 160 211 160 #arcP
 is0 f6 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
 is0 f6 processCall 'Functional Processes/initData:call()' #txt
 is0 f6 doCall true #txt
@@ -124,11 +124,10 @@ is0 f11 actionDecl 'com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData 
 ' #txt
 is0 f11 actionTable 'out=in;
 ' #txt
-is0 f11 actionCode 'import iMotobike.GenerateNumberPlate;
-out.motobike.numberPlate = GenerateNumberPlate.generateMotorbikeNumber();
-out.generated = true;
-GenerateNumberPlate.createMotobikeDossier(out.person,out.motobike);
-ivy.log.info("Test" + GenerateNumberPlate.countDossier());' #txt
+is0 f11 actionCode 'import com.imotobike.Dossier;
+import iMotobike.GenerateNumberPlate;
+out.motobike.numberPlate = GenerateNumberPlate.createNumberPlate(out.person,out.motobike);
+out.generated = true;' #txt
 is0 f11 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
 is0 f11 184 218 112 44 0 -8 #rect
 is0 f11 @|StepIcon #fIcon
@@ -136,12 +135,24 @@ is0 f12 expr out #txt
 is0 f12 109 240 184 240 #arcP
 is0 f10 expr out #txt
 is0 f10 296 240 371 240 #arcP
+is0 f13 actionDecl 'com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData out;
+' #txt
+is0 f13 actionTable 'out=in;
+' #txt
+is0 f13 actionCode 'import iMotobike.GenerateNumberPlate;
+GenerateNumberPlate.createMotobikeDossier(out.person,out.motobike);
+' #txt
+is0 f13 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
+is0 f13 168 138 112 44 0 -8 #rect
+is0 f13 @|StepIcon #fIcon
+is0 f14 expr out #txt
+is0 f14 109 160 168 160 #arcP
+is0 f5 expr out #txt
+is0 f5 280 160 387 160 #arcP
 >Proto is0 .type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
 >Proto is0 .processKind HTML_DIALOG #txt
 >Proto is0 -8 -8 16 16 16 26 #rect
 >Proto is0 '' #fIcon
-is0 f3 mainOut f5 tail #connect
-is0 f5 head f4 mainIn #connect
 is0 f0 mainOut f7 tail #connect
 is0 f7 head f6 mainIn #connect
 is0 f6 mainOut f2 tail #connect
@@ -150,3 +161,7 @@ is0 f8 mainOut f12 tail #connect
 is0 f12 head f11 mainIn #connect
 is0 f11 mainOut f10 tail #connect
 is0 f10 head f9 mainIn #connect
+is0 f3 mainOut f14 tail #connect
+is0 f14 head f13 mainIn #connect
+is0 f13 mainOut f5 tail #connect
+is0 f5 head f4 mainIn #connect

@@ -7,7 +7,7 @@ package com.imotobike;
 public class Dossier extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -4001004657835491268L;
+  private static final long serialVersionUID = -3176873873378894975L;
 
   private com.imotobike.Person person;
 
@@ -67,6 +67,26 @@ public class Dossier extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setApproved(java.lang.Boolean _approved)
   {
     approved = _approved;
+  }
+
+  private java.util.UUID id;
+
+  /**
+   * Gets the field id.
+   * @return the value of the field id; may be null.
+   */
+  public java.util.UUID getId()
+  {
+    return id;
+  }
+
+  /**
+   * Sets the field id.
+   * @param _id the new value of the field id.
+   */
+  public void setId(java.util.UUID _id)
+  {
+    id = _id;
   }
 
 }
