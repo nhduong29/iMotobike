@@ -52,8 +52,6 @@ public class GenerateNumberPlate {
 			return true;
 		} 
 		return false;
-		
-		
 	}
 	
 	public static void createMotobikeDossier(Person person, Motobike moto){
