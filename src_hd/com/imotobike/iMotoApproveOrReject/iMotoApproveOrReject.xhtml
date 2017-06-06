@@ -9,8 +9,9 @@
 <h:body>
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="userComponent">
+		<ui:insert>
 			<div class="user-info">
-          		Welcome <p:commandLink>Orell Cappack</p:commandLink> - <p:commandLink>Logout</p:commandLink>
+          		Welcome <p:commandLink actionListener="#{logic.logout}">Orell Cappack</p:commandLink> - <p:commandLink actionListener="#{logic.logout}">Logout</p:commandLink>
           	</div>
         </ui:insert>
 		</ui:define>
