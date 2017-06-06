@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Jun 05 14:03:09 ICT 2017]
+[>Created: Tue Jun 06 09:04:36 ICT 2017]
 15C7710818F8B77D 3.18 #module
 >Proto >Proto Collection #zClass
 is0 iMotoApproveOrRejectProcess Big #zClass
@@ -21,6 +21,11 @@ is0 @PushWFArc f2 '' #zField
 is0 @RichDialogProcessStart f3 '' #zField
 is0 @RichDialogEnd f4 '' #zField
 is0 @PushWFArc f5 '' #zField
+is0 @RichDialogProcessStart f6 '' #zField
+is0 @RichDialogEnd f7 '' #zField
+is0 @GridStep f9 '' #zField
+is0 @PushWFArc f10 '' #zField
+is0 @PushWFArc f8 '' #zField
 >Proto is0 is0 iMotoApproveOrRejectProcess #zField
 is0 f0 guid 15C771081BAE7FEC #txt
 is0 f0 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
@@ -70,6 +75,39 @@ is0 f4 211 147 26 26 0 12 #rect
 is0 f4 @|RichDialogEndIcon #fIcon
 is0 f5 expr out #txt
 is0 f5 109 160 211 160 #arcP
+is0 f6 guid 15C7B24F4CBE02A3 #txt
+is0 f6 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
+is0 f6 actionDecl 'com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData out;
+' #txt
+is0 f6 actionTable 'out=in;
+' #txt
+is0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>logout</name>
+        <nameStyle>6,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+is0 f6 83 243 26 26 -17 15 #rect
+is0 f6 @|RichDialogProcessStartIcon #fIcon
+is0 f7 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
+is0 f7 guid 15C7B251D0C1C807 #txt
+is0 f7 371 243 26 26 0 12 #rect
+is0 f7 @|RichDialogEndIcon #fIcon
+is0 f9 actionDecl 'com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData out;
+' #txt
+is0 f9 actionTable 'out=in;
+' #txt
+is0 f9 actionCode ivy.session.logoutSessionUser(); #txt
+is0 f9 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
+is0 f9 168 234 112 44 0 -8 #rect
+is0 f9 @|StepIcon #fIcon
+is0 f10 expr out #txt
+is0 f10 109 256 168 256 #arcP
+is0 f8 expr out #txt
+is0 f8 280 256 371 256 #arcP
 >Proto is0 .type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
 >Proto is0 .processKind HTML_DIALOG #txt
 >Proto is0 -8 -8 16 16 16 26 #rect
@@ -78,3 +116,7 @@ is0 f0 mainOut f2 tail #connect
 is0 f2 head f1 mainIn #connect
 is0 f3 mainOut f5 tail #connect
 is0 f5 head f4 mainIn #connect
+is0 f6 mainOut f10 tail #connect
+is0 f10 head f9 mainIn #connect
+is0 f9 mainOut f8 tail #connect
+is0 f8 head f7 mainIn #connect
