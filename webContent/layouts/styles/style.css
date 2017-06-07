@@ -130,3 +130,9 @@ button .ui-icon{
 .disable{
 	color:#a1b0b6 !important;
 }
+
+
+.error{
+	color: red;
+	font-size: 20px;
+}

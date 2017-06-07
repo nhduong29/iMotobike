@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Jun 05 11:31:25 ICT 2017]
+[>Created: Wed Jun 07 18:42:52 ICT 2017]
 15C685CF1AFC49DD 3.18 #module
 >Proto >Proto Collection #zClass
 Ln0 Login Big #zClass
@@ -20,9 +20,9 @@ Ln0 @GridStep f5 '' #zField
 Ln0 @PushWFArc f6 '' #zField
 Ln0 @Alternative f12 '' #zField
 Ln0 @PushWFArc f13 '' #zField
-Ln0 @PushWFArc f14 '' #zField
 Ln0 @EndTask f15 '' #zField
 Ln0 @PushWFArc f16 '' #zField
+Ln0 @PushWFArc f14 '' #zField
 >Proto Ln0 Ln0 Login #zField
 Ln0 f0 outLink start.ivp #txt
 Ln0 f0 type com.imotobike.Account #txt
@@ -49,9 +49,13 @@ Ln0 f3 richDialogId com.imotobike.LoginPage #txt
 Ln0 f3 startMethod start(com.imotobike.Account) #txt
 Ln0 f3 type com.imotobike.Account #txt
 Ln0 f3 requestActionDecl '<com.imotobike.Account account> param;' #txt
+Ln0 f3 requestMappingAction 'param.account=in;
+' #txt
 Ln0 f3 responseActionDecl 'com.imotobike.Account out;
 ' #txt
 Ln0 f3 responseMappingAction 'out=in;
+out.errorMessage=result.account.errorMessage;
+out.isLogined=result.account.isLogined;
 out.passWord=result.account.passWord;
 out.userName=result.account.userName;
 ' #txt
@@ -69,7 +73,11 @@ Ln0 f5 actionTable 'out=in;
 ' #txt
 Ln0 f5 actionCode 'out.isLogined=ivy.session.loginSessionUser(in.userName,in.passWord);
 
-' #txt
+if(out.isLogined==false){
+	out.errorMessage = "Invalid Username/Password";
+	out.userName = "";
+	out.passWord="";
+}' #txt
 Ln0 f5 type com.imotobike.Account #txt
 Ln0 f5 384 42 112 44 0 -8 #rect
 Ln0 f5 @|StepIcon #fIcon
@@ -80,20 +88,6 @@ Ln0 f12 584 48 32 32 0 16 #rect
 Ln0 f12 @|AlternativeIcon #fIcon
 Ln0 f13 expr out #txt
 Ln0 f13 496 64 584 64 #arcP
-Ln0 f14 expr in #txt
-Ln0 f14 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>No</name>
-        <nameStyle>2,7
-</nameStyle>
-    </language>
-</elementInfo>
-' #txt
-Ln0 f14 600 80 248 88 #arcP
-Ln0 f14 1 600 120 #addKink
-Ln0 f14 2 248 120 #addKink
-Ln0 f14 1 0.11141304347826086 0 -13 #arcLabel
 Ln0 f15 type com.imotobike.Account #txt
 Ln0 f15 761 49 30 30 0 15 #rect
 Ln0 f15 @|EndIcon #fIcon
@@ -110,6 +104,20 @@ Ln0 f16 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 Ln0 f16 616 64 761 64 #arcP
 Ln0 f16 0 0.3146067415730337 0 -13 #arcLabel
+Ln0 f14 expr in #txt
+Ln0 f14 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>No</name>
+        <nameStyle>2,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Ln0 f14 600 80 248 88 #arcP
+Ln0 f14 1 600 120 #addKink
+Ln0 f14 2 248 120 #addKink
+Ln0 f14 1 0.11141304347826086 0 -13 #arcLabel
 >Proto Ln0 .type com.imotobike.Account #txt
 >Proto Ln0 .processKind NORMAL #txt
 >Proto Ln0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>

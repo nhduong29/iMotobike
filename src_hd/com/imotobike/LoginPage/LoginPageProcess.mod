@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Jun 02 17:35:06 ICT 2017]
+[>Created: Wed Jun 07 18:04:57 ICT 2017]
 15C685BB94129FC4 3.18 #module
 >Proto >Proto Collection #zClass
 Ls0 LoginPageProcess Big #zClass
@@ -30,6 +30,10 @@ Ls0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodE
 <com.imotobike.Account account> param = methodEvent.getInputArguments();
 ' #txt
 Ls0 f0 inParameterMapAction 'out.account=param.account;
+out.account.errorMessage=param.account.errorMessage;
+out.account.isLogined=param.account.isLogined;
+out.account.passWord=param.account.passWord;
+out.account.userName=param.account.userName;
 ' #txt
 Ls0 f0 outParameterDecl '<com.imotobike.Account account> result;
 ' #txt
@@ -39,6 +43,8 @@ Ls0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>start(Account)</name>
+        <nameStyle>14,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt

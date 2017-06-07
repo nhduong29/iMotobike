@@ -6,3 +6,5 @@ passWord String #field
 passWord PERSISTENT #fieldModifier
 isLogined Boolean #field
 isLogined PERSISTENT #fieldModifier
+errorMessage String #field
+errorMessage PERSISTENT #fieldModifier

@@ -7,7 +7,7 @@ package com.imotobike;
 public class Account extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 3166237841354535665L;
+  private static final long serialVersionUID = 2767648692143999208L;
 
   private java.lang.String userName;
 
@@ -67,6 +67,26 @@ public class Account extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setIsLogined(java.lang.Boolean _isLogined)
   {
     isLogined = _isLogined;
+  }
+
+  private java.lang.String errorMessage;
+
+  /**
+   * Gets the field errorMessage.
+   * @return the value of the field errorMessage; may be null.
+   */
+  public java.lang.String getErrorMessage()
+  {
+    return errorMessage;
+  }
+
+  /**
+   * Sets the field errorMessage.
+   * @param _errorMessage the new value of the field errorMessage.
+   */
+  public void setErrorMessage(java.lang.String _errorMessage)
+  {
+    errorMessage = _errorMessage;
   }
 
 }

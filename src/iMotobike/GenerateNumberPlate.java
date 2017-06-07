@@ -1,6 +1,5 @@
 package iMotobike;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -9,8 +8,6 @@ import com.imotobike.Motobike;
 import com.imotobike.Person;
 
 import ch.ivyteam.ivy.business.data.store.BusinessDataRepository;
-import ch.ivyteam.ivy.environment.Ivy;
-import ch.ivyteam.ivy.scripting.objects.Date;
 
 public class GenerateNumberPlate {
 	private static String generateLetter(){
@@ -85,75 +82,19 @@ public class GenerateNumberPlate {
 		BusinessDataRepository repo = BusinessDataRepository.get();
 		Dossier dos = findDossier(repo, numberPlate);
 		dos.setApproved(true);
-		Ivy.repo().save(dos);
+		repo.save(dos);
 	}
 	
 	public static void rejectRequest(String numberPlate){
 		BusinessDataRepository repo = BusinessDataRepository.get();
 		Dossier dos = findDossier(repo, numberPlate);
-		Ivy.repo().delete(dos);
+		repo.delete(dos);
 	}
 	
 	public static List<Dossier> getApprovalList(){
 		BusinessDataRepository repo = BusinessDataRepository.get();
 		List<Dossier> approvalList = repo.search(Dossier.class).textField("approved").containsAllWords("true").execute().getAll();
 		return approvalList;
-	}
-	
-	
-	private static List<Person> createPersonList(){
-		List<Person> personList = new ArrayList<>();
-		 int i = 1;
-		while(i <= 10){
-			Person person = new Person();
-			person.setAddress("Tran Quang Dieu "+i);
-			person.setBirthday(new Date(1991, 01, 01));
-			person.setEmail("tnson"+i+"@gmail.com");
-			person.setFullName("Son Tran "+i);
-			person.setIdentify("00"+i);
-			
-			personList.add(person);
-			i++;
-		}
-		return personList;
-	}
-	
-	private static List<Motobike> createMobikeList(){
-		List<Motobike> mobikeList = new ArrayList<>();
-		 int i = 1;
-		while(i <= 10){
-			Motobike motobike = new Motobike();
-			motobike.setChasicFrameNumber("00"+i);
-			motobike.setChasicNumber("00"+i);
-			motobike.setDescription("Example data"+i);
-			motobike.setNumberPlate("59V2-123"+i);
-			motobike.setTypes("AirBlade2017");
-			mobikeList.add(motobike);
-			
-			mobikeList.add(motobike);
-			i++;
-		
-		}
-		return mobikeList;
-	}
-	
-	public static void createSampleData(){
-		List<Person> personList = createPersonList();
-		List<Motobike> motobikeList = createMobikeList();
-		int i = 1;
-		while(i<=10){
-			Dossier dossier = new Dossier();
-			dossier.setApproved(false);
-			dossier.setId(new UUID(1, 100));
-			dossier.setMotobike(motobikeList.get(i));
-			dossier.setPerson(personList.get(i));
-			
-			Ivy.repo().save(dossier);
-			
-			i++;
-		}
-		
-		
 	}
 	
 }
