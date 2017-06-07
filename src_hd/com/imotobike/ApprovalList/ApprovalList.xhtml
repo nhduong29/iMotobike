@@ -15,28 +15,38 @@
 			</h3>
 			
 			<h:form id="form">
+			
 				<p:dataTable id="approvalLists" widgetVar="approvalLists"
 						value="#{data.approvalList}" var="dossier"
-						selectionMode="single">
+						selectionMode="single" rowKey="#{dossier.id}">
 
-						<p:column headerText="#{ivy.cms.co('/Layouts/fullName')}" id="fullName">
+					
+				<f:facet name="header">
+						<p:outputPanel
+							style="height:20px; padding-bottom:15px; text-align:right">
+							<h:outputText value="Search: " style="font-size:12pt;" />
+							<p:inputText id="globalFilter"
+								onkeyup="PF('approvalLists').filter()" style="width:150px"
+								placeholder="Ask me anything" />
+						</p:outputPanel>
+					</f:facet>
+
+					<p:column headerText="#{ivy.cms.co('/Layouts/fullName')}" id="fullName" filterBy="#{dossier.person.fullName}" styleClass="filterColumn">
 							<p:outputLabel value="#{dossier.person.fullName}"></p:outputLabel>
-						</p:column>
-						<p:column headerText="#{ivy.cms.co('/Layouts/id')}"  id="ID">
+						</p:column>`
+						<p:column headerText="#{ivy.cms.co('/Layouts/id')}"  id="ID" filterBy="#{dossier.person.identify}">
 							<p:outputLabel value="#{dossier.person.identify}"></p:outputLabel>
 						</p:column>
-						<p:column headerText="#{ivy.cms.co('/Layouts/chassisNumber')}"  id="chassisNumber">
+						<p:column headerText="#{ivy.cms.co('/Layouts/chassisNumber')}"  id="chassisNumber" filterBy="#{dossier.motobike.chasicNumber}">
 							<p:outputLabel value="#{dossier.motobike.chasicNumber}"></p:outputLabel>
 						</p:column>
-						<p:column headerText="#{ivy.cms.co('/Layouts/chassisFrameNumber')}"  id="chassisFrameNumber">
+						<p:column headerText="#{ivy.cms.co('/Layouts/chassisFrameNumber')}"  id="chassisFrameNumber" filterBy="#{dossier.motobike.chasicFrameNumber}">
 							<p:outputLabel value="#{dossier.motobike.chasicFrameNumber}"></p:outputLabel>
 						</p:column>
-						<p:column headerText="#{ivy.cms.co('/Layouts/numberPlate')}"  id="numberPlate">
+						<p:column headerText="#{ivy.cms.co('/Layouts/numberPlate')}"  id="numberPlate" filterBy="#{dossier.motobike.numberPlate}">
 							<p:outputLabel value="#{dossier.motobike.numberPlate}"></p:outputLabel>
 						</p:column>
 					</p:dataTable>
-					<br /><br />
-					<p:commandButton value="Close" id="closeButton" icon="fa fa-close"></p:commandButton>
 			</h:form>
 			
 		</ui:define>
