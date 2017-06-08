@@ -43,15 +43,15 @@ is0 @PushWFArc f23 '' #zField
 >Proto is0 is0 iMotoApproveOrRejectProcess #zField
 is0 f0 guid 15C771081BAE7FEC #txt
 is0 f0 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
-is0 f0 method start(com.imotobike.initDataForApplication) #txt
+is0 f0 method start(com.imotobike.MotorbikeNumberPlateData) #txt
 is0 f0 disableUIEvents true #txt
 is0 f0 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<com.imotobike.initDataForApplication initDataForApplication> param = methodEvent.getInputArguments();
+<com.imotobike.MotorbikeNumberPlateData initDataForApplication> param = methodEvent.getInputArguments();
 ' #txt
 is0 f0 inParameterMapAction 'out.initDataForApplication=param.initDataForApplication;
 ' #txt
 is0 f0 inActionCode ; #txt
-is0 f0 outParameterDecl '<com.imotobike.initDataForApplication initDataForApplication> result;
+is0 f0 outParameterDecl '<com.imotobike.MotorbikeNumberPlateData initDataForApplication> result;
 ' #txt
 is0 f0 outParameterMapAction 'result.initDataForApplication=in.initDataForApplication;
 ' #txt

@@ -20,9 +20,9 @@ At0 @PushWFArc f4 '' #zField
 At0 @PushWFArc f2 '' #zField
 >Proto At0 At0 ApprovalList #zField
 At0 f0 outLink start.ivp #txt
-At0 f0 type com.imotobike.initDataForApplication #txt
+At0 f0 type com.imotobike.MotorbikeNumberPlateData #txt
 At0 f0 inParamDecl '<> param;' #txt
-At0 f0 actionDecl 'com.imotobike.initDataForApplication out;
+At0 f0 actionDecl 'com.imotobike.MotorbikeNumberPlateData out;
 ' #txt
 At0 f0 guid 15C804E56D4368D7 #txt
 At0 f0 requestEnabled true #txt
@@ -38,16 +38,16 @@ At0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 At0 f0 @C|.responsibility Everybody #txt
 At0 f0 81 49 30 30 -21 17 #rect
 At0 f0 @|StartRequestIcon #fIcon
-At0 f1 type com.imotobike.initDataForApplication #txt
+At0 f1 type com.imotobike.MotorbikeNumberPlateData #txt
 At0 f1 369 49 30 30 0 15 #rect
 At0 f1 @|EndIcon #fIcon
 At0 f3 targetWindow NEW:card: #txt
 At0 f3 targetDisplay TOP #txt
 At0 f3 richDialogId com.imotobike.ApprovalList #txt
 At0 f3 startMethod start(List<com.imotobike.Dossier>) #txt
-At0 f3 type com.imotobike.initDataForApplication #txt
+At0 f3 type com.imotobike.MotorbikeNumberPlateData #txt
 At0 f3 requestActionDecl '<List<com.imotobike.Dossier> approvalList> param;' #txt
-At0 f3 responseActionDecl 'com.imotobike.initDataForApplication out;
+At0 f3 responseActionDecl 'com.imotobike.MotorbikeNumberPlateData out;
 ' #txt
 At0 f3 responseMappingAction 'out=in;
 ' #txt
@@ -70,7 +70,7 @@ At0 f4 expr out #txt
 At0 f4 111 64 168 64 #arcP
 At0 f2 expr out #txt
 At0 f2 280 64 369 64 #arcP
->Proto At0 .type com.imotobike.initDataForApplication #txt
+>Proto At0 .type com.imotobike.MotorbikeNumberPlateData #txt
 >Proto At0 .processKind NORMAL #txt
 >Proto At0 0 0 32 24 18 0 #rect
 >Proto At0 @|BIcon #fIcon

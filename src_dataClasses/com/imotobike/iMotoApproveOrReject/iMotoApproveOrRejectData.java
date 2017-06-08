@@ -7,15 +7,15 @@ package com.imotobike.iMotoApproveOrReject;
 public class iMotoApproveOrRejectData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 73441990802610883L;
+  private static final long serialVersionUID = -6967945647317902653L;
 
-  private com.imotobike.initDataForApplication initDataForApplication;
+  private com.imotobike.MotorbikeNumberPlateData initDataForApplication;
 
   /**
    * Gets the field initDataForApplication.
    * @return the value of the field initDataForApplication; may be null.
    */
-  public com.imotobike.initDataForApplication getInitDataForApplication()
+  public com.imotobike.MotorbikeNumberPlateData getInitDataForApplication()
   {
     return initDataForApplication;
   }
@@ -24,7 +24,7 @@ public class iMotoApproveOrRejectData extends ch.ivyteam.ivy.scripting.objects.C
    * Sets the field initDataForApplication.
    * @param _initDataForApplication the new value of the field initDataForApplication.
    */
-  public void setInitDataForApplication(com.imotobike.initDataForApplication _initDataForApplication)
+  public void setInitDataForApplication(com.imotobike.MotorbikeNumberPlateData _initDataForApplication)
   {
     initDataForApplication = _initDataForApplication;
   }

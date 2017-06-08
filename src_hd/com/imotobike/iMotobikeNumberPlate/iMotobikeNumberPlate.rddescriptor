@@ -15,13 +15,13 @@
         <inputParameter>
             <name>iMotobikeNumberPlate</name>
             <description></description>
-            <parameterType>com.imotobike.initDataForApplication</parameterType>
+            <parameterType>com.imotobike.MotorbikeNumberPlateData</parameterType>
             <nullPermitted>false</nullPermitted>
         </inputParameter>
         <outputParameter>
             <name>iMotobikeNumberPlate</name>
             <description></description>
-            <parameterType>com.imotobike.initDataForApplication</parameterType>
+            <parameterType>com.imotobike.MotorbikeNumberPlateData</parameterType>
             <nullPermitted>false</nullPermitted>
         </outputParameter>
     </startMethod>

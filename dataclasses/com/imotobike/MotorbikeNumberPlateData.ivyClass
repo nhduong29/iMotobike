@@ -1,4 +1,4 @@
-initDataForApplication #class
+MotorbikeNumberPlateData #class
 com.imotobike #namespace
 motobike com.imotobike.Motobike #field
 motobike PERSISTENT #fieldModifier

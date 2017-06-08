@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Jun 08 11:14:24 ICT 2017]
+[>Created: Thu Jun 08 13:45:07 ICT 2017]
 15C635E6DC392060 3.18 #module
 >Proto >Proto Collection #zClass
 ie0 iMobike Big #zClass
@@ -27,9 +27,9 @@ ie0 @TkArc f5 '' #zField
 ie0 @PushWFArc f11 '' #zField
 >Proto ie0 ie0 iMobike #zField
 ie0 f0 outLink start.ivp #txt
-ie0 f0 type com.imotobike.initDataForApplication #txt
+ie0 f0 type com.imotobike.MotorbikeNumberPlateData #txt
 ie0 f0 inParamDecl '<> param;' #txt
-ie0 f0 actionDecl 'com.imotobike.initDataForApplication out;
+ie0 f0 actionDecl 'com.imotobike.MotorbikeNumberPlateData out;
 ' #txt
 ie0 f0 guid 15C635E6DC5D9381 #txt
 ie0 f0 requestEnabled true #txt
@@ -45,16 +45,16 @@ ie0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ie0 f0 @C|.responsibility Everybody #txt
 ie0 f0 81 49 30 30 -21 17 #rect
 ie0 f0 @|StartRequestIcon #fIcon
-ie0 f1 type com.imotobike.initDataForApplication #txt
+ie0 f1 type com.imotobike.MotorbikeNumberPlateData #txt
 ie0 f1 857 49 30 30 0 15 #rect
 ie0 f1 @|EndIcon #fIcon
 ie0 f3 targetWindow NEW:card: #txt
 ie0 f3 targetDisplay TOP #txt
 ie0 f3 richDialogId com.imotobike.iMotobikeNumberPlate #txt
-ie0 f3 startMethod start(com.imotobike.initDataForApplication) #txt
-ie0 f3 type com.imotobike.initDataForApplication #txt
-ie0 f3 requestActionDecl '<com.imotobike.initDataForApplication iMotobikeNumberPlate> param;' #txt
-ie0 f3 responseActionDecl 'com.imotobike.initDataForApplication out;
+ie0 f3 startMethod start(com.imotobike.MotorbikeNumberPlateData) #txt
+ie0 f3 type com.imotobike.MotorbikeNumberPlateData #txt
+ie0 f3 requestActionDecl '<com.imotobike.MotorbikeNumberPlateData iMotobikeNumberPlate> param;' #txt
+ie0 f3 responseActionDecl 'com.imotobike.MotorbikeNumberPlateData out;
 ' #txt
 ie0 f3 responseMappingAction 'out=in;
 out.generated=result.iMotobikeNumberPlate.generated;
@@ -79,11 +79,11 @@ ie0 f3 244 40 216 48 -97 -8 #rect
 ie0 f3 @|RichDialogIcon #fIcon
 ie0 f4 expr out #txt
 ie0 f4 111 64 244 64 #arcP
-ie0 f8 actionDecl 'com.imotobike.initDataForApplication out;
+ie0 f8 actionDecl 'com.imotobike.MotorbikeNumberPlateData out;
 ' #txt
-ie0 f8 actionCode 'import com.imotobike.initDataForApplication;
-out = signal.getSignalData().toType(initDataForApplication.class);' #txt
-ie0 f8 type com.imotobike.initDataForApplication #txt
+ie0 f8 actionCode 'import com.imotobike.MotorbikeNumberPlateData;
+out = signal.getSignalData().toType(MotorbikeNumberPlateData.class);' #txt
+ie0 f8 type com.imotobike.MotorbikeNumberPlateData #txt
 ie0 f8 signalCode request #txt
 ie0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -96,13 +96,13 @@ ie0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 ie0 f8 81 257 30 30 -74 17 #rect
 ie0 f8 @|SignalStartEventIcon #fIcon
-ie0 f7 actionDecl 'com.imotobike.initDataForApplication out;
+ie0 f7 actionDecl 'com.imotobike.MotorbikeNumberPlateData out;
 ' #txt
 ie0 f7 actionTable 'out=in;
 ' #txt
 ie0 f7 actionCode 'import ch.ivyteam.ivy.process.model.value.SignalCode;
 ivy.wf.signals().send(new SignalCode("request"), in);' #txt
-ie0 f7 type com.imotobike.initDataForApplication #txt
+ie0 f7 type com.imotobike.MotorbikeNumberPlateData #txt
 ie0 f7 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -118,18 +118,18 @@ ie0 f9 expr out #txt
 ie0 f9 460 64 640 64 #arcP
 ie0 f6 expr out #txt
 ie0 f6 752 64 857 64 #arcP
-ie0 f10 type com.imotobike.initDataForApplication #txt
+ie0 f10 type com.imotobike.MotorbikeNumberPlateData #txt
 ie0 f10 553 257 30 30 0 15 #rect
 ie0 f10 @|EndIcon #fIcon
 ie0 f2 richDialogId com.imotobike.iMotoApproveOrReject #txt
-ie0 f2 startMethod start(com.imotobike.initDataForApplication) #txt
-ie0 f2 requestActionDecl '<com.imotobike.initDataForApplication initDataForApplication> param;' #txt
+ie0 f2 startMethod start(com.imotobike.MotorbikeNumberPlateData) #txt
+ie0 f2 requestActionDecl '<com.imotobike.MotorbikeNumberPlateData initDataForApplication> param;' #txt
 ie0 f2 requestMappingAction 'param.initDataForApplication.generated=in.generated;
 param.initDataForApplication.motobike=in.motobike;
 param.initDataForApplication.motobikeTypes=in.motobikeTypes;
 param.initDataForApplication.person=in.person;
 ' #txt
-ie0 f2 responseActionDecl 'com.imotobike.initDataForApplication out;
+ie0 f2 responseActionDecl 'com.imotobike.MotorbikeNumberPlateData out;
 ' #txt
 ie0 f2 responseMappingAction 'out=in;
 out.generated=result.initDataForApplication.generated;
@@ -146,7 +146,7 @@ TaskA.PRI=2
 TaskA.ROL=Police
 TaskA.SKIP_TASK_LIST=false
 TaskA.TYPE=0' #txt
-ie0 f2 type com.imotobike.initDataForApplication #txt
+ie0 f2 type com.imotobike.MotorbikeNumberPlateData #txt
 ie0 f2 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -158,13 +158,13 @@ ie0 f2 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 ie0 f2 232 250 112 44 -23 -8 #rect
 ie0 f2 @|UserTaskIcon #fIcon
-ie0 f5 type com.imotobike.initDataForApplication #txt
+ie0 f5 type com.imotobike.MotorbikeNumberPlateData #txt
 ie0 f5 var in1 #txt
 ie0 f5 111 272 232 272 #arcP
 ie0 f11 expr data #txt
 ie0 f11 outCond ivp=="TaskA.ivp" #txt
 ie0 f11 344 272 553 272 #arcP
->Proto ie0 .type com.imotobike.initDataForApplication #txt
+>Proto ie0 .type com.imotobike.MotorbikeNumberPlateData #txt
 >Proto ie0 .processKind NORMAL #txt
 >Proto ie0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

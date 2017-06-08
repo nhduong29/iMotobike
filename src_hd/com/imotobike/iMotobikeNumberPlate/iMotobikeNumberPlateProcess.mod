@@ -178,17 +178,17 @@ is0 f5 expr out #txt
 is0 f5 296 160 387 160 #arcP
 is0 f15 guid 15C7C4585FAC9B02 #txt
 is0 f15 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
-is0 f15 method start(com.imotobike.initDataForApplication) #txt
+is0 f15 method start(com.imotobike.MotorbikeNumberPlateData) #txt
 is0 f15 disableUIEvents true #txt
 is0 f15 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<com.imotobike.initDataForApplication iMotobikeNumberPlate> param = methodEvent.getInputArguments();
+<com.imotobike.MotorbikeNumberPlateData iMotobikeNumberPlate> param = methodEvent.getInputArguments();
 ' #txt
 is0 f15 inParameterMapAction 'out.generated=param.iMotobikeNumberPlate.generated;
 out.motobike=param.iMotobikeNumberPlate.motobike;
 out.motobikeTypes=param.iMotobikeNumberPlate.motobikeTypes;
 out.person=param.iMotobikeNumberPlate.person;
 ' #txt
-is0 f15 outParameterDecl '<com.imotobike.initDataForApplication iMotobikeNumberPlate> result;
+is0 f15 outParameterDecl '<com.imotobike.MotorbikeNumberPlateData iMotobikeNumberPlate> result;
 ' #txt
 is0 f15 outParameterMapAction 'result.iMotobikeNumberPlate.generated=in.generated;
 result.iMotobikeNumberPlate.motobike=in.motobike;

@@ -27,10 +27,10 @@ result.motobike=in.motobike;
 result.motobikeTypes=in.motobikeTypes;
 result.person=in.person;
 ' #txt
-ia0 f0 actionDecl 'com.imotobike.initDataForApplication out;
+ia0 f0 actionDecl 'com.imotobike.MotorbikeNumberPlateData out;
 ' #txt
 ia0 f0 callSignature call() #txt
-ia0 f0 type com.imotobike.initDataForApplication #txt
+ia0 f0 type com.imotobike.MotorbikeNumberPlateData #txt
 ia0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -42,10 +42,10 @@ ia0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 ia0 f0 81 49 30 30 -13 17 #rect
 ia0 f0 @|StartSubIcon #fIcon
-ia0 f1 type com.imotobike.initDataForApplication #txt
+ia0 f1 type com.imotobike.MotorbikeNumberPlateData #txt
 ia0 f1 337 49 30 30 0 15 #rect
 ia0 f1 @|EndSubIcon #fIcon
-ia0 f3 actionDecl 'com.imotobike.initDataForApplication out;
+ia0 f3 actionDecl 'com.imotobike.MotorbikeNumberPlateData out;
 ' #txt
 ia0 f3 actionTable 'out=in;
 ' #txt
@@ -57,7 +57,7 @@ in.motobikeTypes.add("Wave 2017");
 in.motobikeTypes.add("Future 2017");
 in.motobikeTypes.add("Vision 2017");
 ' #txt
-ia0 f3 type com.imotobike.initDataForApplication #txt
+ia0 f3 type com.imotobike.MotorbikeNumberPlateData #txt
 ia0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -73,7 +73,7 @@ ia0 f4 expr out #txt
 ia0 f4 111 64 160 64 #arcP
 ia0 f2 expr out #txt
 ia0 f2 288 64 337 64 #arcP
->Proto ia0 .type com.imotobike.initDataForApplication #txt
+>Proto ia0 .type com.imotobike.MotorbikeNumberPlateData #txt
 >Proto ia0 .processKind CALLABLE_SUB #txt
 >Proto ia0 0 0 32 24 18 0 #rect
 >Proto ia0 @|BIcon #fIcon
