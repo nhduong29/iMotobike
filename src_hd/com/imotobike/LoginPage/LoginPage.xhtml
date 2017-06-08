@@ -8,19 +8,17 @@
 	xmlns:pm="http://primefaces.org/mobile">
 <h:body>
 	<ui:composition template="/layouts/basic.xhtml">
-		<ui:define name="title">LoginPage</ui:define>
+		<ui:define name="title">#{ivy.cms.co('/Layouts/login')}</ui:define>
 		<ui:define name="content">
-			<h3>
-			Login Page
-			</h3>
+			<h3>#{ivy.cms.co('/Layouts/login')}</h3>
 			<h:form id="form">
 				<p:outputLabel styleClass="error"> #{data.account.errorMessage}</p:outputLabel>
 				<h:panelGrid columns="2">
 						<p:outputLabel for="username">#{ivy.cms.co('/Login/userName')}</p:outputLabel>
-						<p:inputText value="#{data.account.userName}" id="username" required="true" requiredMessage=" User Name is required!"/>
+						<p:inputText value="#{data.account.userName}" id="username" required="true" requiredMessage="#{ivy.cms.co('/Login/userName')} #{ivy.cms.co('/ValidationMessages/is_required')}!"/>
 						<p:outputLabel for="password" >#{ivy.cms.co('/Login/passWord')}</p:outputLabel>
-						<p:password value="#{data.account.passWord}"  id="password" required="true" requiredMessage=" User Name is required!"/>
-					<p:commandButton actionListener="#{logic.login}" value="Login" update="form" icon="ui-icon-check" />
+						<p:password value="#{data.account.passWord}"  id="password" required="true" requiredMessage="#{ivy.cms.co('/Login/passWord')} #{ivy.cms.co('/ValidationMessages/is_required')}!"/>
+					<p:commandButton actionListener="#{logic.login}" value="#{ivy.cms.co('/Layouts/login')}" update="form" icon="ui-icon-check" />
 				</h:panelGrid>
 			</h:form>
 		</ui:define>

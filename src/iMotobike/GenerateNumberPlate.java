@@ -10,6 +10,11 @@ import com.imotobike.Person;
 import ch.ivyteam.ivy.business.data.store.BusinessDataRepository;
 
 public class GenerateNumberPlate {
+	
+	public GenerateNumberPlate forInstance() {
+		return new GenerateNumberPlate();
+	}
+	
 	private static String generateLetter(){
 		String letter = "";
         int n = 'Z' - 'A' + 1;

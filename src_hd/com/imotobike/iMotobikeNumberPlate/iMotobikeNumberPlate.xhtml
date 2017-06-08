@@ -8,20 +8,18 @@
 	xmlns:pm="http://primefaces.org/mobile">
 <h:body>
 	<ui:composition template="/layouts/basic.xhtml">
-		<ui:define name="title">iMotobikeNumberPalate</ui:define>
+		<ui:define name="title">#{ivy.cms.co('/Layouts/requestNumberPlate')}</ui:define>
 		<ui:define name="content">
 
 			<h:form id="form">
 				<p:panelGrid columns="2">
-					<ic:com.imotobike.PersonComponent startMethod="start" person="#{data.person}" label="Personal Information" readOnly="#{data.generated}">
-					</ic:com.imotobike.PersonComponent>
+					<ic:com.imotobike.PersonComponent startMethod="start" person="#{data.person}" label="#{ivy.cms.co('/Layouts/personalInfomation')}" readOnly="#{data.generated}"/>
 					
-					<ic:com.imotobike.MotobikeComponent startMethod="start" motobike="#{data.motobike}" label="Motobike Information" motobikeTypes="#{data.motobikeTypes}" readOnly="#{data.generated}">
-					</ic:com.imotobike.MotobikeComponent>
+					<ic:com.imotobike.MotobikeComponent startMethod="start" motobike="#{data.motobike}" label="#{ivy.cms.co('/Layouts/motobikeInfo')}" motobikeTypes="#{data.motobikeTypes}" readOnly="#{data.generated}"/>
 					
 				</p:panelGrid>
 				<p:panelGrid columns="1">
-					<p:fieldset legend="Request Number Plate" toggleable="false">
+					<p:fieldset legend="#{ivy.cms.co('/Layouts/requestNumberPlate')}" toggleable="false">
 						<div class="numberPlate">
 							<p:outputLabel value="#{data.motobike.numberPlate}"/>
 						</div>

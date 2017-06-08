@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Jun 07 18:42:52 ICT 2017]
+[>Created: Thu Jun 08 11:14:53 ICT 2017]
 15C685CF1AFC49DD 3.18 #module
 >Proto >Proto Collection #zClass
 Ln0 Login Big #zClass
@@ -63,7 +63,16 @@ Ln0 f3 windowConfiguration '* ' #txt
 Ln0 f3 isAsynch false #txt
 Ln0 f3 isInnerRd false #txt
 Ln0 f3 userContext '* ' #txt
-Ln0 f3 192 40 112 48 0 -8 #rect
+Ln0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Login Form</name>
+        <nameStyle>10,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Ln0 f3 192 42 112 44 -31 -8 #rect
 Ln0 f3 @|RichDialogIcon #fIcon
 Ln0 f4 expr out #txt
 Ln0 f4 111 64 192 64 #arcP
@@ -79,7 +88,16 @@ if(out.isLogined==false){
 	out.passWord="";
 }' #txt
 Ln0 f5 type com.imotobike.Account #txt
-Ln0 f5 384 42 112 44 0 -8 #rect
+Ln0 f5 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>init Data</name>
+        <nameStyle>9,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Ln0 f5 384 42 112 44 -22 -8 #rect
 Ln0 f5 @|StepIcon #fIcon
 Ln0 f6 expr out #txt
 Ln0 f6 304 64 384 64 #arcP
@@ -114,7 +132,7 @@ Ln0 f14 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Ln0 f14 600 80 248 88 #arcP
+Ln0 f14 600 80 248 86 #arcP
 Ln0 f14 1 600 120 #addKink
 Ln0 f14 2 248 120 #addKink
 Ln0 f14 1 0.11141304347826086 0 -13 #arcLabel

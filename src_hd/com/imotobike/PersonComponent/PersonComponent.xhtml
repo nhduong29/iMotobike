@@ -9,7 +9,7 @@
       xmlns:pm="http://primefaces.org/mobile">
       
   <cc:interface componentType="IvyComponent">
-  	<cc:attribute name="label" />
+  	<cc:attribute name="label"/>
   	<cc:attribute name="readOnly"/>
   </cc:interface>
   
@@ -17,31 +17,28 @@
     <p:fieldset legend="#{cc.attrs.label}" toggleable="false">
 		<p:panelGrid columns="3">
 			<p:outputLabel for="fullName" value="#{ivy.cms.co('/Layouts/fullName')}" />
-			<p:inputText value="#{data.person.fullName}" id="fullName" requiredMessage="Fullname is required" required="true" maxlength="100" disabled="#{cc.attrs.readOnly}" />
+			<p:inputText value="#{data.person.fullName}" id="fullName" requiredMessage="#{ivy.cms.co('/Layouts/fullName')} #{ivy.cms.co('/ValidationMessages/is_required')}" required="true" maxlength="100" disabled="#{cc.attrs.readOnly}" />
 			<p:message for="fullName" display="text" id="fullNameMessage"/>
 			
 			<p:outputLabel for="id" value="#{ivy.cms.co('/Layouts/id')}"/>
-			<p:inputText value="#{data.person.identify}" required="true" maxlength="12" id="id" requiredMessage="ID is required" disabled="#{cc.attrs.readOnly}" />
+			<p:inputText value="#{data.person.identify}" required="true" maxlength="12" id="id" requiredMessage="ID #{ivy.cms.co('/ValidationMessages/is_required')}" disabled="#{cc.attrs.readOnly}" />
 			<p:message for="id" display="text"  />
 			
 			<p:outputLabel for="birthday" value="#{ivy.cms.co('/Layouts/birthday')}"/>
-  	 			<p:calendar id="birthday" requiredMessage="Birthday is required" value="#{data.person.birthday}" navigator="true" required="true" pattern="dd.MM.yyyy" disabled="#{cc.attrs.readOnly}">
-          			<!-- 
-  	 			   	Use the following tag to convert date, time, datetime types to a string that is displayed and vice versa  
-				-->
+  	 			<p:calendar id="birthday" requiredMessage="#{ivy.cms.co('/Layouts/birthday')} #{ivy.cms.co('/ValidationMessages/is_required')}" value="#{data.person.birthday}" navigator="true" required="true" pattern="dd.MM.yyyy" disabled="#{cc.attrs.readOnly}">
           			<f:convertDateTime pattern="dd.MM.yyyy" />
           			<f:validator validatorId = "iMotobike.AgeValidator" />
           		</p:calendar>
           		<p:message for="birthday" display="text"  />
           		
           	<p:outputLabel for="mail" value="Email"/>
-			<p:inputText type="email" id="mail" value="#{data.person.email}" disabled="#{cc.attrs.readOnly}" validatorMessage="Email not match the format">
+			<p:inputText type="email" id="mail" value="#{data.person.email}" disabled="#{cc.attrs.readOnly}" validatorMessage="#{ivy.cms.co('/ValidationMessages/mail')}">
 				<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
 			</p:inputText>
 			<p:message for="mail" display="text"  />
 			
 			<p:outputLabel for="address" value="#{ivy.cms.co('/Layouts/address')}" style="vertical-align:top"/>
-	 					<p:inputTextarea value="#{data.person.address}" rows="2" id="address" requiredMessage="Address is required" required="true" maxlength="255" disabled="#{cc.attrs.readOnly}"/>
+	 					<p:inputTextarea value="#{data.person.address}" rows="2" id="address" requiredMessage="#{ivy.cms.co('/Layouts/address')} #{ivy.cms.co('/ValidationMessages/is_required')}" required="true" maxlength="255" disabled="#{cc.attrs.readOnly}"/>
 	 					<p:message for="address" display="text"  />
 		</p:panelGrid>
 	</p:fieldset>

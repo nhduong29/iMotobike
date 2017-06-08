@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Jun 06 17:33:23 ICT 2017]
+[>Created: Thu Jun 08 11:14:24 ICT 2017]
 15C635E6DC392060 3.18 #module
 >Proto >Proto Collection #zClass
 ie0 iMobike Big #zClass
@@ -101,10 +101,18 @@ ie0 f7 actionDecl 'com.imotobike.initDataForApplication out;
 ie0 f7 actionTable 'out=in;
 ' #txt
 ie0 f7 actionCode 'import ch.ivyteam.ivy.process.model.value.SignalCode;
-
 ivy.wf.signals().send(new SignalCode("request"), in);' #txt
 ie0 f7 type com.imotobike.initDataForApplication #txt
-ie0 f7 640 42 112 44 0 -8 #rect
+ie0 f7 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Send Signal</name>
+        <nameStyle>11,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ie0 f7 640 42 112 44 -33 -8 #rect
 ie0 f7 @|StepIcon #fIcon
 ie0 f9 expr out #txt
 ie0 f9 460 64 640 64 #arcP

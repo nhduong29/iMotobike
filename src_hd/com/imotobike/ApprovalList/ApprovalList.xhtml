@@ -8,10 +8,10 @@
 	xmlns:pm="http://primefaces.org/mobile">
 <h:body>
 	<ui:composition template="/layouts/basic.xhtml">
-		<ui:define name="title">ApprovalList</ui:define>
+		<ui:define name="title">#{ivy.cms.co('/Layouts/approval_title')}</ui:define>
 		<ui:define name="content">
 			<h3>
-			The list of approvals
+			#{ivy.cms.co('/Layouts/approval_title')}
 			</h3>
 			
 			<h:form id="form">
@@ -24,10 +24,10 @@
 				<f:facet name="header">
 						<p:outputPanel
 							style="height:20px; padding-bottom:15px; text-align:right">
-							<h:outputText value="Search: " style="font-size:12pt;" />
+							<h:outputText value="#{ivy.cms.co('/Layouts/search')}: " style="font-size:12pt;" />
 							<p:inputText id="globalFilter"
 								onkeyup="PF('approvalLists').filter()" style="width:150px"
-								placeholder="Ask me anything" />
+								placeholder="#{ivy.cms.co('/Layouts/ask_me')}" />
 						</p:outputPanel>
 					</f:facet>
 

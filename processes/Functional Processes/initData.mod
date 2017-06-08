@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Jun 05 22:14:09 ICT 2017]
+[>Created: Thu Jun 08 11:13:45 ICT 2017]
 15C67A687011A1E1 3.18 #module
 >Proto >Proto Collection #zClass
 ia0 initData Big #zClass
@@ -58,12 +58,21 @@ in.motobikeTypes.add("Future 2017");
 in.motobikeTypes.add("Vision 2017");
 ' #txt
 ia0 f3 type com.imotobike.initDataForApplication #txt
-ia0 f3 168 42 112 44 0 -8 #rect
+ia0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>initDataForApplication</name>
+        <nameStyle>22,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+ia0 f3 160 42 128 44 -60 -8 #rect
 ia0 f3 @|StepIcon #fIcon
 ia0 f4 expr out #txt
-ia0 f4 111 64 168 64 #arcP
+ia0 f4 111 64 160 64 #arcP
 ia0 f2 expr out #txt
-ia0 f2 280 64 337 64 #arcP
+ia0 f2 288 64 337 64 #arcP
 >Proto ia0 .type com.imotobike.initDataForApplication #txt
 >Proto ia0 .processKind CALLABLE_SUB #txt
 >Proto ia0 0 0 32 24 18 0 #rect

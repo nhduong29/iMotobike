@@ -9,9 +9,9 @@
       xmlns:pm="http://primefaces.org/mobile">
       
   <cc:interface componentType="IvyComponent">
-  	<cc:attribute name="label" />
+  	<cc:attribute name="label" shortDescription="" type=""/>
   	<cc:attribute name="readOnly"/>
-  	<cc:attribute name="motobikeTypes" />
+  	<cc:attribute name="motobikeTypes"/>
   </cc:interface>
   
   <cc:implementation>
@@ -19,17 +19,17 @@
     <p:fieldset legend="#{cc.attrs.label}" toggleable="false">
 		<p:panelGrid columns="3">
 			<p:outputLabel for="type" value="#{ivy.cms.co('/Layouts/type')}"/>
-			<p:selectOneMenu id="type" value="#{data.motobike.types}" requiredMessage="Type is required" disabled="#{cc.attrs.readOnly}">
+			<p:selectOneMenu id="type" value="#{data.motobike.types}" requiredMessage="#{ivy.cms.co('/Layouts/type')} #{ivy.cms.co('/ValidationMessages/is_required')}" disabled="#{cc.attrs.readOnly}">
 	            <f:selectItems value="#{cc.attrs.motobikeTypes}" var="type" itemValue="#{type}" itemLabel="#{type}"></f:selectItems>
 	        </p:selectOneMenu>
 	        <p:message for="type" display="text"  />
 	        
 	        <p:outputLabel for="chassisNumber" value="#{ivy.cms.co('/Layouts/chassisNumber')}"/>
-			<p:inputText value="#{data.motobike.chasicNumber}" required="true" id="chassisNumber" requiredMessage="Chassis Number is required" maxlength="17" disabled="#{cc.attrs.readOnly}"/>
+			<p:inputText value="#{data.motobike.chasicNumber}" required="true" id="chassisNumber" requiredMessage="#{ivy.cms.co('/Layouts/chassisNumber')} #{ivy.cms.co('/ValidationMessages/is_required')}" maxlength="17" disabled="#{cc.attrs.readOnly}"/>
 			<p:message for="chassisNumber" display="text"  />
 			
 			<p:outputLabel for="chassisFrame" value="#{ivy.cms.co('/Layouts/chassisFrameNumber')}"/>
-			<p:inputText value="#{data.motobike.chasicFrameNumber}" required="true" id="chassisFrame" requiredMessage="Chassis Frame Number is required" maxlength="17" disabled="#{cc.attrs.readOnly}" />
+			<p:inputText value="#{data.motobike.chasicFrameNumber}" required="true" id="chassisFrame" requiredMessage="#{ivy.cms.co('/Layouts/chassisFrameNumber')} #{ivy.cms.co('/ValidationMessages/is_required')}" maxlength="17" disabled="#{cc.attrs.readOnly}" />
 			<p:message for="chassisFrame" display="text"  />
 			
 			<p:outputLabel for="description" style="vertical-align:top" value="#{ivy.cms.co('/Layouts/description')}"/>

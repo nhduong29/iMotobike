@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Tue Jun 06 17:33:48 ICT 2017]
+[>Created: Thu Jun 08 11:15:56 ICT 2017]
 15C7710818F8B77D 3.18 #module
 >Proto >Proto Collection #zClass
 is0 iMotoApproveOrRejectProcess Big #zClass
@@ -138,7 +138,16 @@ is0 f11 actionTable 'out=in;
 ' #txt
 is0 f11 actionCode 'in.username = ivy.session.getSessionUserName();' #txt
 is0 f11 type com.imotobike.iMotoApproveOrReject.iMotoApproveOrRejectData #txt
-is0 f11 208 42 112 44 0 -8 #rect
+is0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Get Session</name>
+        <nameStyle>11,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+is0 f11 208 42 112 44 -34 -8 #rect
 is0 f11 @|StepIcon #fIcon
 is0 f12 expr out #txt
 is0 f12 109 64 208 64 #arcP
@@ -244,7 +253,16 @@ is0 f25 windowConfiguration '* ' #txt
 is0 f25 isAsynch false #txt
 is0 f25 isInnerRd true #txt
 is0 f25 userContext '* ' #txt
-is0 f25 224 426 112 44 0 -8 #rect
+is0 f25 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Page Appoval List</name>
+        <nameStyle>17,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+is0 f25 224 426 112 44 -49 -8 #rect
 is0 f25 @|RichDialogIcon #fIcon
 is0 f22 expr out #txt
 is0 f22 336 448 443 448 #arcP

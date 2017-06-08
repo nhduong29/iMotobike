@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Jun 07 08:30:07 ICT 2017]
+[>Created: Thu Jun 08 11:18:17 ICT 2017]
 15C636315B13B794 3.18 #module
 >Proto >Proto Collection #zClass
 is0 iMotobikeNumberPlateProcess Big #zClass
@@ -138,12 +138,21 @@ out.generated = true;
 
 ' #txt
 is0 f11 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
-is0 f11 184 218 112 44 0 -8 #rect
+is0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Create NumberPlate</name>
+        <nameStyle>18,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+is0 f11 176 218 128 44 -56 -8 #rect
 is0 f11 @|StepIcon #fIcon
 is0 f12 expr out #txt
-is0 f12 109 240 184 240 #arcP
+is0 f12 109 240 176 240 #arcP
 is0 f10 expr out #txt
-is0 f10 296 240 371 240 #arcP
+is0 f10 304 240 371 240 #arcP
 is0 f13 actionDecl 'com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData out;
 ' #txt
 is0 f13 actionTable 'out=in;
@@ -152,7 +161,16 @@ is0 f13 actionCode 'import iMotobike.GenerateNumberPlate;
 GenerateNumberPlate.createMotobikeDossier(out.person,out.motobike);
 ' #txt
 is0 f13 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
-is0 f13 184 138 112 44 0 -8 #rect
+is0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Save Data</name>
+        <nameStyle>9,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+is0 f13 184 138 112 44 -28 -8 #rect
 is0 f13 @|StepIcon #fIcon
 is0 f14 expr out #txt
 is0 f14 109 160 184 160 #arcP
@@ -186,10 +204,10 @@ is0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-is0 f15 75 339 26 26 -76 15 #rect
+is0 f15 83 331 26 26 -76 15 #rect
 is0 f15 @|RichDialogInitStartIcon #fIcon
 is0 f16 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
-is0 f16 422 342 26 26 0 12 #rect
+is0 f16 382 334 26 26 0 12 #rect
 is0 f16 @|RichDialogProcessEndIcon #fIcon
 is0 f17 type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
 is0 f17 processCall 'Functional Processes/initData:call()' #txt
@@ -213,12 +231,13 @@ is0 f17 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-is0 f17 187 333 112 44 -21 -8 #rect
+is0 f17 179 325 112 44 -21 -8 #rect
 is0 f17 @|CallSubIcon #fIcon
 is0 f18 expr out #txt
-is0 f18 299 355 422 355 #arcP
+is0 f18 291 347 382 347 #arcP
+is0 f18 0 0.49999999999999994 0 0 #arcLabel
 is0 f19 expr out #txt
-is0 f19 100 352 187 355 #arcP
+is0 f19 108 344 179 347 #arcP
 >Proto is0 .type com.imotobike.iMotobikeNumberPlate.iMotobikeNumberPlateData #txt
 >Proto is0 .processKind HTML_DIALOG #txt
 >Proto is0 -8 -8 16 16 16 26 #rect
