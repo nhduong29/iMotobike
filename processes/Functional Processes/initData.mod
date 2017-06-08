@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Jun 08 11:13:45 ICT 2017]
+[>Created: Thu Jun 08 14:19:49 ICT 2017]
 15C67A687011A1E1 3.18 #module
 >Proto >Proto Collection #zClass
 ia0 initData Big #zClass
@@ -49,14 +49,11 @@ ia0 f3 actionDecl 'com.imotobike.MotorbikeNumberPlateData out;
 ' #txt
 ia0 f3 actionTable 'out=in;
 ' #txt
-ia0 f3 actionCode 'in.motobike.numberPlate = "XXYX-XXX.XX";
+ia0 f3 actionCode 'import iMotobike.GenerateNumberPlate;
+in.motobike.numberPlate = "XXYX-XXX.XX";
 in.generated = false;
 
-in.motobikeTypes.add("AriBlade 2017");
-in.motobikeTypes.add("Wave 2017");
-in.motobikeTypes.add("Future 2017");
-in.motobikeTypes.add("Vision 2017");
-' #txt
+in.motobikeTypes = GenerateNumberPlate.getListOfMotoType();' #txt
 ia0 f3 type com.imotobike.MotorbikeNumberPlateData #txt
 ia0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

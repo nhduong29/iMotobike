@@ -1,5 +1,6 @@
 package iMotobike;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -100,6 +101,15 @@ public class GenerateNumberPlate {
 		BusinessDataRepository repo = BusinessDataRepository.get();
 		List<Dossier> approvalList = repo.search(Dossier.class).textField("approved").containsAllWords("true").execute().getAll();
 		return approvalList;
+	}
+	
+	public static List<String> getListOfMotoType(){
+		List<String> motoTypes = new ArrayList<String>();
+		motoTypes.add(MotobikeType.ARIBLADE.getTypeName());
+		motoTypes.add(MotobikeType.WAVE.getTypeName());
+		motoTypes.add(MotobikeType.FUTURE.getTypeName());
+		motoTypes.add(MotobikeType.VISION.getTypeName());
+		return motoTypes;
 	}
 	
 }
